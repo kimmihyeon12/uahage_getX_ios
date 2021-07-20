@@ -48,15 +48,15 @@ class _ReviseSuggestState extends State<ReviseSuggest> {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context, width: 1500, height: 2667);
-
+    ScreenUtil.init(context, width: 781, height: 1390);
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: new AppBar(
+        shadowColor: Colors.black26,
         title: new Text(
           "정보 수정 제안하기",
           style: TextStyle(
-              fontSize: 62.sp,
+              fontSize: 35.sp,
               fontFamily: 'NotoSansCJKkr_Medium',
               color: Color.fromRGBO(255, 114, 148, 1.0)),
         ),
@@ -81,12 +81,12 @@ class _ReviseSuggestState extends State<ReviseSuggest> {
               }
             },
             child: Container(
-              padding: EdgeInsets.only(right: 40.h),
+              padding: EdgeInsets.only(right: 40.h * 0.62),
               child: Center(
                 child: Text(
                   "등록",
                   style: TextStyle(
-                      fontSize: 62.sp,
+                      fontSize: 35.sp,
                       fontFamily: 'NotoSansCJKkr_Medium',
                       color: btnColor
                           ? Color.fromRGBO(255, 114, 142, 1.0)
@@ -100,12 +100,14 @@ class _ReviseSuggestState extends State<ReviseSuggest> {
       body: SingleChildScrollView(
         child: Container(
           margin: EdgeInsets.only(
-              right: 35 * width.w, left: 35 * width.w, top: 30 * height.h),
+              right: 35 * width.w * 0.7,
+              left: 35 * width.w * 0.7,
+              top: 30 * height.h * 0.62),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Container(
-                height: 260 * height.h,
+                height: 260 * height.h * 0.62,
                 child: TextFormField(
                   autofocus: true,
                   onChanged: (e) {
@@ -123,33 +125,36 @@ class _ReviseSuggestState extends State<ReviseSuggest> {
                   controller: myController,
                   textAlign: TextAlign.left,
                   style: TextStyle(
-                    color: Color(0xffc6c6c6),
+                    color: Color(0xffff7292),
+                    fontSize: 32.sp,
                   ),
                   maxLines: 20,
                   maxLength: 1000,
-                  cursorColor: Color(0xffc6c6c6),
+                  cursorColor: Color(0xffff7292),
                   decoration: InputDecoration(
                     isDense: true,
                     border: InputBorder.none,
                     hintText: "상호, 위치 이전,영업시간, 전화번호, 폐업 등\n정보를 작성해주세요.",
                     hintStyle: TextStyle(
                       color: Color(0xffc6c6c6),
+                      fontSize: 32.sp,
                       height: 1.2,
                     ),
                     counterStyle: TextStyle(
-                        color: Color(0xffc6c6c6),
+                        color: Color(0xffff7292),
+                        fontSize: 32.sp,
                         fontFamily: "NotoSansCJKkr_Medium"),
-                    contentPadding: EdgeInsets.all(30.h),
+                    contentPadding: EdgeInsets.all(30.h * 0.62),
                   ),
                 ),
               ),
-              normalfont("5장 등록 가능", 56, Color(0xffc6c6c6)),
-              Padding(padding: EdgeInsets.only(top: 5 * height.h)),
+              normalfont("5장 등록 가능", 32, Color(0xffc6c6c6)),
+              Padding(padding: EdgeInsets.only(top: 5 * height.h * 0.62)),
               Container(
                 // margin: EdgeInsets.only(
-                //     top: 20 * height.h, right: 36 * width.w, left: 36 * width.w),
+                //     top: 20 * height.h*0.62, right: 36 * width.w*0.7, left: 36 * width.w*0.7),
                 width: double.infinity,
-                height: 130 * width.w,
+                height: 100 * width.w * 0.7,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -166,7 +171,7 @@ class _ReviseSuggestState extends State<ReviseSuggest> {
                         "assets/reviewPage/camera_button.png",
                       ),
                     ),
-                    Padding(padding: EdgeInsets.only(left: 17 * width.w)),
+                    Padding(padding: EdgeInsets.only(left: 17 * width.w * 0.7)),
                     Expanded(
                       flex: 1,
                       child: ListView.builder(
@@ -180,8 +185,8 @@ class _ReviseSuggestState extends State<ReviseSuggest> {
                                   child: Stack(
                                     children: [
                                       SizedBox(
-                                        width: 130 * width.w,
-                                        height: 130 * height.w,
+                                        width: 130 * width.w * 0.7,
+                                        height: 130 * height.w * 0.7,
                                         child: Image.file(
                                           uploadingImage[index],
                                           fit: BoxFit.cover,
@@ -199,8 +204,8 @@ class _ReviseSuggestState extends State<ReviseSuggest> {
                                         ),
                                       ),
                                       Container(
-                                        width: 130 * width.w,
-                                        height: 130 * height.w,
+                                        width: 130 * width.w * 0.7,
+                                        height: 130 * height.w * 0.7,
                                         color: Colors.grey.withOpacity(0.3),
                                       ),
                                       Positioned(
@@ -215,7 +220,7 @@ class _ReviseSuggestState extends State<ReviseSuggest> {
                                           child: Container(
                                             child: Image.asset(
                                               "assets/reviewPage/x_button.png",
-                                              height: 27.3 * width.w,
+                                              height: 27.3 * width.w * 0.7,
                                             ),
                                           ),
                                         ),
@@ -224,8 +229,8 @@ class _ReviseSuggestState extends State<ReviseSuggest> {
                                   ),
                                 ),
                                 Padding(
-                                    padding:
-                                        EdgeInsets.only(left: 17 * width.w)),
+                                    padding: EdgeInsets.only(
+                                        left: 17 * width.w * 0.7)),
                               ],
                             );
                           }),
@@ -233,9 +238,9 @@ class _ReviseSuggestState extends State<ReviseSuggest> {
                   ],
                 ),
               ),
-              Padding(padding: EdgeInsets.only(top: 20 * height.h)),
+              Padding(padding: EdgeInsets.only(top: 20 * height.h * 0.62)),
               Container(
-                  padding: EdgeInsets.all(16 * height.h),
+                  padding: EdgeInsets.all(16 * height.h * 0.62),
                   decoration: BoxDecoration(
                       color: Color.fromRGBO(255, 114, 142, 0.05),
                       border: Border.all(
@@ -244,7 +249,7 @@ class _ReviseSuggestState extends State<ReviseSuggest> {
                       borderRadius: BorderRadius.all(Radius.circular(10))),
                   child: normalfont(
                       "제안해 주신 정보는 가능한 빠른 시일 내에 검토하여 업데이트에 반영하도록 하겠습니다.",
-                      58,
+                      32,
                       Color.fromRGBO(255, 114, 142, 0.7)))
             ],
           ),

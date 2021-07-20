@@ -34,6 +34,7 @@ class SnsLogin extends GetView<UserController> {
   }
 
   loginWithKakao() async {
+    print("loginWithKakao");
     try {
       var code = await AuthCodeClient.instance.request();
 
@@ -44,6 +45,7 @@ class SnsLogin extends GetView<UserController> {
   }
 
   loginWithTalk() async {
+    print("loginWithTalk");
     try {
       var code = await AuthCodeClient.instance.requestWithTalk();
 
@@ -60,12 +62,17 @@ class SnsLogin extends GetView<UserController> {
 
   Future naverLogin() async {
     try {
-      await FlutterNaverLogin.logIn();
+      print("navre login");
+      NaverLoginResult login = await FlutterNaverLogin.logIn();
+
+      print(login.accessToken);
       NaverAccessToken res = await FlutterNaverLogin.currentAccessToken;
 
       controller.setNaverToken(res.accessToken);
+      print(res.accessToken);
 
       await neverGetEmail();
+      print("get email");
       var isAlreadyRegistered = await users.checkEmail();
 
       if (!isAlreadyRegistered) {

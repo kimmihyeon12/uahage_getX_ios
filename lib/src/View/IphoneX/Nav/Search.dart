@@ -1,15 +1,11 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/screenutil.dart';
-import 'package:get/get.dart';
-
 import 'package:uahage/src/Controller/location.controller.dart';
 import 'package:uahage/src/Controller/place.restaurant.bookmark.controller.dart';
 import 'package:uahage/src/Controller/user.controller.dart';
 import 'package:uahage/src/Service/places.restaurant.bookmarks.dart';
 import 'package:uahage/src/Static/Widget/progress.dart';
-
 import 'package:uahage/src/Static/url.dart';
 import 'dart:async';
 import 'package:webview_flutter/webview_flutter.dart';
@@ -90,21 +86,22 @@ class _SearchState extends State<Search> {
                 borderRadius: BorderRadius.circular(8),
                 color: Colors.white,
               ),
-              margin: EdgeInsets.fromLTRB(51.w*0.75, 161.h*0.9, 51.w*0.75, 0),
-              height: 196.h*0.9,
+              margin:
+                  EdgeInsets.fromLTRB(51.w * 0.75, 161.h * 0.9, 51.w * 0.75, 0),
+              height: 196.h * 0.9,
               child: Row(
                 // crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
-                    margin: EdgeInsets.only(left: 53.w*0.75),
+                    margin: EdgeInsets.only(left: 53.w * 0.75),
                     child: Image.asset(
                       "./assets/searchPage/arrow.png",
-                      height: 68.h*0.9,
+                      height: 68.h * 0.9,
                     ),
                   ),
                   Container(
-                    margin: EdgeInsets.only(left: 41.w*0.75),
-                    width: 1200.w*0.75,
+                    margin: EdgeInsets.only(left: 41.w * 0.75),
+                    width: 1200.w * 0.75,
                     child: // 검색 조건을 설정해주세요
                         Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -120,7 +117,7 @@ class _SearchState extends State<Search> {
                         InkWell(
                           child: Image.asset(
                             "./assets/searchPage/cat_btn.png",
-                            height: 158.h*0.9,
+                            height: 158.h * 0.9,
                           ),
                         ),
                       ],

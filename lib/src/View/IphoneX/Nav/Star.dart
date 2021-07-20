@@ -1,13 +1,7 @@
-import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter_device_type/flutter_device_type.dart';
 import 'package:get/get.dart';
-import 'package:http/http.dart' as http;
-import 'dart:convert';
-import 'dart:async';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:uahage/src/Controller/place.restaurant.bookmark.controller.dart';
-import 'package:uahage/src/Controller/place.controller.dart';
 import 'package:uahage/src/Controller/user.controller.dart';
 
 import 'package:uahage/src/Service/places.restaurant.bookmarks.dart';
@@ -56,11 +50,11 @@ class Star extends GetView<BookmarkController> {
                   children: [
                     Container(
                       alignment: Alignment.center,
-                      margin: EdgeInsets.only(top: 746.h*0.9),
+                      margin: EdgeInsets.only(top: 746.h * 0.9),
                       child: Image.asset(
                         './assets/starPage/group.png',
-                        height: 400.h*0.9,
-                        width: 700.w*0.84,
+                        height: 400.h * 0.9,
+                        width: 700.w * 0.84,
                       ),
                     ),
                   ],
@@ -73,10 +67,10 @@ class Star extends GetView<BookmarkController> {
                       return Card(
                         elevation: 0.3,
                         child: Container(
-                            height: 450.h*0.9,
+                            height: 450.h * 0.9,
                             padding: EdgeInsets.only(
-                              top: 1.h*0.9,
-                              left: 26.w*0.84,
+                              top: 1.h * 0.9,
+                              left: 26.w * 0.84,
                             ),
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -99,9 +93,9 @@ class Star extends GetView<BookmarkController> {
                                         index, "${result[1]}");
                                   },
                                   child: Container(
-                                    width: 1150.w*0.84,
+                                    width: 1150.w * 0.84,
                                     //     color:Colors.pink,
-                                    margin: EdgeInsets.only(top:15.h),
+                                    margin: EdgeInsets.only(top: 15.h),
                                     child: Row(
                                       crossAxisAlignment:
                                           CrossAxisAlignment.start,
@@ -110,59 +104,63 @@ class Star extends GetView<BookmarkController> {
                                           if (index % 4 == 1) {
                                             return Image.asset(
                                               listimage[0],
-                                              height: 413.w*0.84,
-                                              width: 413.w*0.84,
+                                              height: 413.w * 0.84,
+                                              width: 413.w * 0.84,
                                             );
                                           } else if (index % 4 == 2) {
                                             return Image.asset(
                                               listimage[1],
-                                              height: 413.w*0.84,
-                                              width: 413.w*0.84,
+                                              height: 413.w * 0.84,
+                                              width: 413.w * 0.84,
                                             );
                                           } else if (index % 4 == 3) {
                                             return Image.asset(
                                               listimage[2],
-                                              height: 413.w*0.84,
-                                              width: 413.w*0.84,
+                                              height: 413.w * 0.84,
+                                              width: 413.w * 0.84,
                                             );
                                           } else {
                                             return Image.asset(
                                               listimage[3],
-                                              height: 413.w*0.84,
-                                              width: 413.w*0.84,
+                                              height: 413.w * 0.84,
+                                              width: 413.w * 0.84,
                                             );
                                           }
                                         }()),
                                         Padding(
                                             padding: EdgeInsets.only(
-                                          left: 53.w*0.84,
+                                          left: 53.w * 0.84,
                                         )),
                                         Column(
                                           crossAxisAlignment:
                                               CrossAxisAlignment.start,
                                           children: [
-
                                             Row(
                                               crossAxisAlignment:
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Container(
                                                   margin: EdgeInsets.only(
-                                                      top: 5.h*0.9),
-                                                 // width: 700.w*0.84,
-                                                  height: 82.h*0.9,
-                                                  child: controller.placeBookmark[index]
-                                                      .name.length >
-                                                      10
+                                                      top: 5.h * 0.9),
+                                                  // width: 700.w*0.84,
+                                                  height: 82.h * 0.9,
+                                                  child: controller
+                                                              .placeBookmark[
+                                                                  index]
+                                                              .name
+                                                              .length >
+                                                          10
                                                       ? normalfont(
-                                                      '${controller.placeBookmark[index].name.substring(0, 10)}...',
-                                                      50,
-                                                      Colors.black)
+                                                          '${controller.placeBookmark[index].name.substring(0, 10)}...',
+                                                          50,
+                                                          Colors.black)
                                                       : normalfont(
-                                                      controller
-                                                          .placeBookmark[index].name,
-                                                      50,
-                                                      Colors.black),
+                                                          controller
+                                                              .placeBookmark[
+                                                                  index]
+                                                              .name,
+                                                          50,
+                                                          Colors.black),
                                                 ),
                                               ],
                                             ),
@@ -170,11 +168,12 @@ class Star extends GetView<BookmarkController> {
                                               children: [
                                                 Image.asset(
                                                   "./assets/listPage/star_color.png",
-                                                  width: 30 * width.w*0.84,
+                                                  width: 30 * width.w * 0.84,
                                                 ),
                                                 Padding(
                                                   padding: EdgeInsets.only(
-                                                      left: 4.7 * width.w*0.84),
+                                                      left:
+                                                          4.7 * width.w * 0.84),
                                                 ),
                                                 normalfont(
                                                     "${controller.placeBookmark[index].total ?? 0.0} ",
@@ -200,10 +199,10 @@ class Star extends GetView<BookmarkController> {
                                                       Color(0xffb0b0b0)),
                                             ),
                                             Container(
-                                              margin:
-                                                  EdgeInsets.only(top: 10.h*0.9),
-                                              height: 120.h*0.9,
-                                              width: 650.w*0.84,
+                                              margin: EdgeInsets.only(
+                                                  top: 10.h * 0.9),
+                                              height: 120.h * 0.9,
+                                              width: 650.w * 0.84,
                                               alignment: Alignment.bottomRight,
                                               child: Row(
                                                 children: [
@@ -251,21 +250,21 @@ class Star extends GetView<BookmarkController> {
                                 ),
                                 Obx(
                                   () => Container(
-                                    margin:
-                                        EdgeInsets.only(left: 8.w*0.84, top: 40.h*0.9),
+                                    margin: EdgeInsets.only(
+                                        left: 8.w * 0.84, top: 40.h * 0.9),
                                     child: InkWell(
                                       child: Container(
                                         padding: EdgeInsets.only(
-                                            left: 30.w*0.84,
-                                            right: 30.w*0.84,
-                                            bottom: 10.h*0.9),
+                                            left: 30.w * 0.84,
+                                            right: 30.w * 0.84,
+                                            bottom: 10.h * 0.9),
                                         child: Image.asset(
                                           controller.placeBookmark[index]
                                                       .bookmark ==
                                                   0
                                               ? "./assets/listPage/love_grey.png"
                                               : "./assets/listPage/love_color.png",
-                                          height: 46.h*0.9,
+                                          height: 46.h * 0.9,
                                         ),
                                       ),
                                       onTap: () async {

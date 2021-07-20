@@ -30,9 +30,9 @@ import 'package:uahage/src/Static/Widget/popup.dart';
 import 'package:uahage/src/Static/Widget/progress.dart';
 import 'package:uahage/src/Static/Widget/toast.dart';
 import 'package:uahage/src/Static/url.dart';
-import 'package:uahage/src/View/Nav/HomeSub/review.dart';
-import 'package:uahage/src/View/Nav/HomeSub/reviewImage.dart';
-import 'package:uahage/src/View/Nav/HomeSub/reviseSuggest.dart';
+import '../HomeSub/review.dart';
+import '../HomeSub/reviewImage.dart';
+import '../HomeSub/reviseSuggest.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -189,41 +189,41 @@ class _ListSubState extends State<ListSub> {
                         Column(
                           children: [
                             Container(
-                              width: 1500.w*0.75,
+                              width: 1500.w * 0.75,
                               child: (() {
                                 if (placeCode == 1) {
                                   if (index % 3 == 1) {
                                     return mainImage(
-                                        restaurantListImage[0], 1500.w*0.75);
+                                        restaurantListImage[0], 1500.w * 0.75);
                                   } else if (index % 3 == 2) {
                                     return mainImage(
-                                        restaurantListImage[1], 1500.w*0.75);
+                                        restaurantListImage[1], 1500.w * 0.75);
                                   } else
                                     return mainImage(
-                                        restaurantListImage[2], 1500.w*0.75);
+                                        restaurantListImage[2], 1500.w * 0.75);
                                 } else if (placeCode == 2) {
                                   if (index % 2 == 1)
                                     return mainImage(
-                                        hospitalListImage[0], 1500.w*0.75);
+                                        hospitalListImage[0], 1500.w * 0.75);
                                   else
                                     return mainImage(
-                                        hospitalListImage[1], 1500.w*0.75);
+                                        hospitalListImage[1], 1500.w * 0.75);
                                 } else if (placeCode == 5) {
                                   if (index % 2 == 1)
                                     return mainImage(
-                                        kidsCafeListImage[0], 1500.w*0.75);
+                                        kidsCafeListImage[0], 1500.w * 0.75);
                                   else
                                     return mainImage(
-                                        kidsCafeListImage[1], 1500.w*0.75);
+                                        kidsCafeListImage[1], 1500.w * 0.75);
                                 } else if (placeCode == 8) {
                                   if (data.image_path == null) {
                                     return mainImage(
-                                        experienceListImage[0], 1500.w*0.75);
+                                        experienceListImage[0], 1500.w * 0.75);
                                   } else {
                                     return Container(
                                       color: Colors.black,
                                       child: SizedBox(
-                                        height: 870.w*0.75,
+                                        height: 870.w * 0.75,
                                         child: PageView.builder(
                                           itemCount: data.image_path.length,
                                           itemBuilder: (context, index) {
@@ -238,16 +238,16 @@ class _ListSubState extends State<ListSub> {
                                 } else {
                                   if (index % 4 == 1)
                                     return mainImage(
-                                        experienceListImage[0], 1500.w*0.75);
+                                        experienceListImage[0], 1500.w * 0.75);
                                   else if (index % 4 == 2)
                                     return mainImage(
-                                        experienceListImage[1], 1500.w*0.75);
+                                        experienceListImage[1], 1500.w * 0.75);
                                   else if (index % 4 == 3)
                                     return mainImage(
-                                        experienceListImage[2], 1500.w*0.75);
+                                        experienceListImage[2], 1500.w * 0.75);
                                   else
                                     return mainImage(
-                                        experienceListImage[3], 1500.w*0.75);
+                                        experienceListImage[3], 1500.w * 0.75);
                                 }
                               }()),
                             ),
@@ -256,35 +256,31 @@ class _ListSubState extends State<ListSub> {
                         Container(
                           child: Container(
                             padding: EdgeInsets.only(
-                                left: 75.w*0.75, top: 45.h*0.779, bottom: 45.h*0.779),
+                                left: 75.w * 0.75,
+                                top: 45.h * 0.779,
+                                bottom: 45.h * 0.779),
                             child: Column(
                               children: [
                                 Row(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
                                   children: [
                                     Container(
-                                      width: 1250.w*0.75,
-                                      child: boldfont(
-                                          data.name, 60, Colors.black),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsets.only(
-                                        left: 20.w*0.75,
-                                      ),
+                                      width: 1230.w * 0.75,
+                                      child:
+                                          boldfont(data.name, 60, Colors.black),
                                     ),
                                     (() {
                                       if (placeCode == 1) {
                                         return IconButton(
                                           padding: EdgeInsets.all(0),
                                           constraints: BoxConstraints(
-                                              maxWidth: 170.w*0.75,
-                                              maxHeight: 170.h*0.779),
+                                              maxWidth: 170.w * 0.75,
+                                              maxHeight: 170.h * 0.779),
                                           icon: Image.asset(
                                               data.bookmark == 0
                                                   ? "./assets/listPage/love_grey.png"
                                                   : "./assets/listPage/love_color.png",
-                                              height: 60.h*0.779),
+                                              height: 60.h * 0.779),
                                           onPressed: () async {
                                             if (data.bookmark == 0) {
                                               await bookmark.bookmarkToogle(
@@ -312,7 +308,7 @@ class _ListSubState extends State<ListSub> {
                                 ),
                                 Padding(
                                     padding: EdgeInsets.only(
-                                  top: 3.3 * height.h*0.779,
+                                  top: 3.3 * height.h * 0.779,
                                 )),
                                 placeCode == 1
                                     ? Row(
@@ -322,19 +318,20 @@ class _ListSubState extends State<ListSub> {
                                               i++)
                                             Container(
                                               margin: EdgeInsets.only(
-                                                  right: 12 * width.w*0.75),
+                                                  right: 12 * width.w * 0.75),
                                               child: Image.asset(
                                                 "./assets/listPage/star_color.png",
-                                                width: 38 * width.w*0.75,
+                                                width: 38 * width.w * 0.75,
                                               ),
                                             ),
                                           (averStar - averStar.toInt() == 0.5)
                                               ? Container(
                                                   margin: EdgeInsets.only(
-                                                      right: 12 * width.w*0.75),
+                                                      right:
+                                                          12 * width.w * 0.75),
                                                   child: Image.asset(
                                                     "./assets/listPage/star_half.png",
-                                                    width: 38 * width.w*0.75,
+                                                    width: 38 * width.w * 0.75,
                                                   ),
                                                 )
                                               : Container(),
@@ -344,10 +341,10 @@ class _ListSubState extends State<ListSub> {
                                             Container(
                                               child: Image.asset(
                                                 "./assets/listPage/star_grey.png",
-                                                width: 38 * width.w*0.75,
+                                                width: 38 * width.w * 0.75,
                                               ),
                                               margin: EdgeInsets.only(
-                                                  right: 12 * width.w*0.75),
+                                                  right: 12 * width.w * 0.75),
                                             ),
                                           // Padding(
                                           //     padding: EdgeInsets.only(
@@ -361,7 +358,7 @@ class _ListSubState extends State<ListSub> {
                                               )),
                                           Padding(
                                               padding: EdgeInsets.only(
-                                                  left: 12 * width.w*0.75)),
+                                                  left: 12 * width.w * 0.75)),
                                           Text(
                                               '${reviewData.length}명이 평가에 참여했습니다',
                                               style: TextStyle(
@@ -378,13 +375,13 @@ class _ListSubState extends State<ListSub> {
                           ),
                         ),
                         Container(
-                          height: 2.h*0.779,
+                          height: 2.h * 0.779,
                           color: Color(0xfff7f7f7),
                         ),
                         Container(
                           child: Container(
                             padding: EdgeInsets.only(
-                              left: 75.w*0.75,
+                              left: 75.w * 0.75,
                             ),
                             width: MediaQuery.of(context).size.width,
                             // alignment: Alignment.center,
@@ -394,65 +391,64 @@ class _ListSubState extends State<ListSub> {
                               children: [
                                 Padding(
                                     padding: EdgeInsets.only(
-                                  top: 50.w*0.75,
+                                  top: 50.w * 0.75,
                                 )),
                                 normalfont("주소", 46, Color(0xff4d4d4d)),
-                                Padding(padding: EdgeInsets.only(top: 10.w*0.75)),
+                                Padding(
+                                    padding: EdgeInsets.only(top: 10.w * 0.75)),
                                 Row(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Container(
-                                      width: 965.w*0.75,
+                                      width: 965.w * 0.75,
                                       child: normalfont("${data.address}", 46,
                                           Color(0xff808080)),
                                     ),
                                     Padding(
-                                        padding:
-                                            EdgeInsets.only(left: 100.w*0.75)),
+                                        padding: EdgeInsets.only(
+                                            left: 100.w * 0.75)),
                                     GestureDetector(
                                       child: Row(
                                         children: [
                                           Image.asset(
                                             "./assets/sublistPage/copy.png",
-                                            width: 250.w*0.75,
-                                            height: 56.h*0.779,
+                                            width: 250.w * 0.75,
+                                            height: 56.h * 0.779,
                                           ),
                                         ],
                                       ),
                                       onTap: () {
                                         FlutterClipboard.copy(data.address);
-                                        toast(
-                                            context, "주소가 복사되었습니다", "bottom");
+                                        toast(context, "주소가 복사되었습니다", "bottom");
                                       },
                                     )
                                   ],
                                 ),
-                                Padding(padding: EdgeInsets.only(top: 30.w*0.75)),
+                                Padding(
+                                    padding: EdgeInsets.only(top: 30.w * 0.75)),
                                 normalfont("연락처", 46, Color(0xff4d4d4d)),
                                 Padding(
                                     padding: EdgeInsets.only(
-                                  top: 10.w*0.75,
+                                  top: 10.w * 0.75,
                                 )),
                                 Row(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Container(
-                                      width: 955.w*0.75,
+                                      width: 955.w * 0.75,
                                       child: normalfont("${data.phone}", 46,
                                           Color(0xff808080)),
                                     ),
                                     Padding(
-                                        padding:
-                                            EdgeInsets.only(left: 100.w*0.75)),
+                                        padding: EdgeInsets.only(
+                                            left: 100.w * 0.75)),
                                     GestureDetector(
                                       child: Row(
                                         children: [
                                           Image.asset(
                                             "./assets/sublistPage/call.png",
-                                            width: 250.w*0.75,
-                                            height: 76.h*0.779,
+                                            width: 250.w * 0.75,
+                                            height: 76.h * 0.779,
                                           ),
                                         ],
                                       ),
@@ -474,11 +470,10 @@ class _ListSubState extends State<ListSub> {
                                 placeCode == 8
                                     ? Container(
                                         child: Container(
-                                          width: MediaQuery.of(context)
-                                              .size
-                                              .width,
+                                          width:
+                                              MediaQuery.of(context).size.width,
                                           padding: EdgeInsets.only(
-                                            top: 30.h*0.779,
+                                            top: 30.h * 0.779,
                                           ),
                                           child: Column(
                                             crossAxisAlignment:
@@ -488,17 +483,16 @@ class _ListSubState extends State<ListSub> {
                                                   Color(0xff4d4d4d)),
                                               Padding(
                                                   padding: EdgeInsets.only(
-                                                      top: 10.h*0.779)),
+                                                      top: 10.h * 0.779)),
                                               normalfont(
-                                                  data.worked_at ==
-                                                          "undefined"
+                                                  data.worked_at == "undefined"
                                                       ? '문의'
                                                       : '${data.worked_at}',
                                                   46,
                                                   Color(0xff808080)),
                                               Padding(
                                                   padding: EdgeInsets.only(
-                                                      top: 50.h*0.779)),
+                                                      top: 50.h * 0.779)),
                                             ],
                                           ),
                                         ),
@@ -526,13 +520,14 @@ class _ListSubState extends State<ListSub> {
                                 //             Color(0xff808080)),
                                 //       )
                                 //     : Container(),
-                                Padding(padding: EdgeInsets.only(top: 30.w*0.75))
+                                Padding(
+                                    padding: EdgeInsets.only(top: 30.w * 0.75))
                               ],
                             ),
                           ),
                         ),
                         Container(
-                          height: 26 * height.h*0.779,
+                          height: 26 * height.h * 0.779,
                           color: Color(0xfff7f7f7),
                         ),
                         // placeCode == 1
@@ -612,157 +607,158 @@ class _ListSubState extends State<ListSub> {
                           if (placeCode == 1) {
                             return Container(
                               child: Container(
-                                height: 928.h*0.779,
+                                height: 928.h * 0.779,
                                 child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Container(
                                       margin: EdgeInsets.only(
-                                        left: 75.w*0.75,
-                                        top: 50.h*0.779,
+                                        left: 75.w * 0.75,
+                                        top: 50.h * 0.779,
                                       ),
                                       child: normalfont(
                                           "편의시설", 46, Color(0xff4d4d4d)),
                                     ),
                                     Padding(
-                                        padding: EdgeInsets.only(top: 50.h*0.779)),
+                                        padding:
+                                            EdgeInsets.only(top: 50.h * 0.779)),
                                     Row(
                                         // crossAxisAlignment: CrossAxisAlignment.start,
                                         children: [
                                           Padding(
                                               padding: EdgeInsets.only(
-                                                  left: 67.w*0.75)),
+                                                  left: 67.w * 0.75)),
                                           data.baby_menu == true
                                               ? Image.asset(
                                                   imagecolor[0],
-                                                  width: 218.w*0.75,
-                                                  height: 292.h*0.779,
+                                                  width: 218.w * 0.75,
+                                                  height: 292.h * 0.779,
                                                 )
                                               : Image.asset(
                                                   imagegrey[0],
-                                                  width: 218.w*0.75,
-                                                  height: 292.h*0.779,
+                                                  width: 218.w * 0.75,
+                                                  height: 292.h * 0.779,
                                                 ),
                                           Padding(
                                               padding: EdgeInsets.only(
-                                                  left: 59.w*0.75)),
+                                                  left: 59.w * 0.75)),
                                           data.baby_bed == true
                                               ? Image.asset(
                                                   imagecolor[1],
-                                                  width: 218.w*0.75,
-                                                  height: 292.h*0.779,
+                                                  width: 218.w * 0.75,
+                                                  height: 292.h * 0.779,
                                                 )
                                               : Image.asset(
                                                   imagegrey[1],
-                                                  width: 218.w*0.75,
-                                                  height: 292.h*0.779,
+                                                  width: 218.w * 0.75,
+                                                  height: 292.h * 0.779,
                                                 ),
                                           Padding(
                                               padding: EdgeInsets.only(
-                                                  left: 59.w*0.75)),
+                                                  left: 59.w * 0.75)),
                                           data.baby_tableware == true
                                               ? Image.asset(
                                                   imagecolor[2],
-                                                  width: 218.w*0.75,
-                                                  height: 292.h*0.779,
+                                                  width: 218.w * 0.75,
+                                                  height: 292.h * 0.779,
                                                 )
                                               : Image.asset(
                                                   imagegrey[2],
-                                                  width: 218.w*0.75,
-                                                  height: 292.h*0.779,
+                                                  width: 218.w * 0.75,
+                                                  height: 292.h * 0.779,
                                                 ),
                                           Padding(
                                               padding: EdgeInsets.only(
-                                                  left: 59.w*0.75)),
+                                                  left: 59.w * 0.75)),
                                           data.meeting_room == true
                                               ? Image.asset(
                                                   imagecolor[3],
-                                                  width: 218.w*0.75,
-                                                  height: 292.h*0.779,
+                                                  width: 218.w * 0.75,
+                                                  height: 292.h * 0.779,
                                                 )
                                               : Image.asset(
                                                   imagegrey[3],
-                                                  width: 218.w*0.75,
-                                                  height: 292.h*0.779,
+                                                  width: 218.w * 0.75,
+                                                  height: 292.h * 0.779,
                                                 ),
                                           Padding(
                                               padding: EdgeInsets.only(
-                                                  left: 59.w*0.75)),
+                                                  left: 59.w * 0.75)),
                                           data.diaper_change == true
                                               ? Image.asset(
                                                   imagecolor[4],
-                                                  width: 231.w*0.75,
-                                                  height: 284.h*0.779,
+                                                  width: 231.w * 0.75,
+                                                  height: 284.h * 0.779,
                                                 )
                                               : Image.asset(
                                                   imagegrey[4],
-                                                  width: 231.w*0.75,
-                                                  height: 284.h*0.779,
+                                                  width: 231.w * 0.75,
+                                                  height: 284.h * 0.779,
                                                 ),
                                           Padding(
                                               padding: EdgeInsets.only(
-                                                  left: 59.w*0.75)),
+                                                  left: 59.w * 0.75)),
                                         ]),
                                     Padding(
-                                        padding: EdgeInsets.only(top: 50.h*0.779)),
+                                        padding:
+                                            EdgeInsets.only(top: 50.h * 0.779)),
                                     Row(
                                       children: [
                                         Padding(
-                                            padding:
-                                                EdgeInsets.only(left: 67.w*0.75)),
+                                            padding: EdgeInsets.only(
+                                                left: 67.w * 0.75)),
                                         data.play_room == true
                                             ? Image.asset(
                                                 imagecolor[5],
-                                                width: 218.w*0.75,
-                                                height: 292.h*0.779,
+                                                width: 218.w * 0.75,
+                                                height: 292.h * 0.779,
                                               )
                                             : Image.asset(
                                                 imagegrey[5],
-                                                width: 218.w*0.75,
-                                                height: 292.h*0.779,
+                                                width: 218.w * 0.75,
+                                                height: 292.h * 0.779,
                                               ),
                                         Padding(
-                                            padding:
-                                                EdgeInsets.only(left: 59.w*0.75)),
+                                            padding: EdgeInsets.only(
+                                                left: 59.w * 0.75)),
                                         data.stroller == true
                                             ? Image.asset(
                                                 imagecolor[6],
-                                                width: 218.w*0.75,
-                                                height: 292.h*0.779,
+                                                width: 218.w * 0.75,
+                                                height: 292.h * 0.779,
                                               )
                                             : Image.asset(
                                                 imagegrey[6],
-                                                width: 218.w*0.75,
-                                                height: 292.h*0.779,
+                                                width: 218.w * 0.75,
+                                                height: 292.h * 0.779,
                                               ),
                                         Padding(
-                                            padding:
-                                                EdgeInsets.only(left: 59.w*0.75)),
+                                            padding: EdgeInsets.only(
+                                                left: 59.w * 0.75)),
                                         data.nursing_room == true
                                             ? Image.asset(
                                                 imagecolor[7],
-                                                width: 218.w*0.75,
-                                                height: 292.h*0.779,
+                                                width: 218.w * 0.75,
+                                                height: 292.h * 0.779,
                                               )
                                             : Image.asset(
                                                 imagegrey[7],
-                                                width: 218.w*0.75,
-                                                height: 292.h*0.779,
+                                                width: 218.w * 0.75,
+                                                height: 292.h * 0.779,
                                               ),
                                         Padding(
-                                            padding:
-                                                EdgeInsets.only(left: 59.w*0.75)),
+                                            padding: EdgeInsets.only(
+                                                left: 59.w * 0.75)),
                                         data.baby_chair == true
                                             ? Image.asset(
                                                 imagecolor[8],
-                                                width: 218.w*0.75,
-                                                height: 292.h*0.779,
+                                                width: 218.w * 0.75,
+                                                height: 292.h * 0.779,
                                               )
                                             : Image.asset(
                                                 imagegrey[8],
-                                                width: 218.w*0.75,
-                                                height: 292.h*0.779,
+                                                width: 218.w * 0.75,
+                                                height: 292.h * 0.779,
                                               )
                                       ],
                                     ),
@@ -775,20 +771,21 @@ class _ListSubState extends State<ListSub> {
                               child: Container(
                                 width: MediaQuery.of(context).size.width,
                                 padding: EdgeInsets.only(
-                                  left: 75.w*0.75,
-                                  top: 50.h*0.779,
+                                  left: 75.w * 0.75,
+                                  top: 50.h * 0.779,
                                 ),
                                 child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     normalfont("검진항목", 46, Color(0xff4d4d4d)),
                                     Padding(
-                                        padding: EdgeInsets.only(top: 10.h*0.779)),
-                                    normalfont("${data.examination_items}",
-                                        46, Color(0xff808080)),
+                                        padding:
+                                            EdgeInsets.only(top: 10.h * 0.779)),
+                                    normalfont("${data.examination_items}", 46,
+                                        Color(0xff808080)),
                                     Padding(
-                                        padding: EdgeInsets.only(top: 50.h*0.779)),
+                                        padding:
+                                            EdgeInsets.only(top: 50.h * 0.779)),
                                   ],
                                 ),
                               ),
@@ -798,16 +795,16 @@ class _ListSubState extends State<ListSub> {
                               child: Container(
                                 width: MediaQuery.of(context).size.width,
                                 padding: EdgeInsets.only(
-                                  left: 75.w*0.75,
-                                  top: 50.h*0.779,
+                                  left: 75.w * 0.75,
+                                  top: 50.h * 0.779,
                                 ),
                                 child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     normalfont("정보", 46, Color(0xff4d4d4d)),
                                     Padding(
-                                        padding: EdgeInsets.only(top: 10.h*0.779)),
+                                        padding:
+                                            EdgeInsets.only(top: 10.h * 0.779)),
                                     normalfont(
                                         data.use_bus == true
                                             ? "버스 : 운행"
@@ -815,7 +812,8 @@ class _ListSubState extends State<ListSub> {
                                         46,
                                         Color(0xff808080)),
                                     Padding(
-                                        padding: EdgeInsets.only(top: 50.h*0.779)),
+                                        padding:
+                                            EdgeInsets.only(top: 50.h * 0.779)),
                                   ],
                                 ),
                               ),
@@ -825,16 +823,16 @@ class _ListSubState extends State<ListSub> {
                               child: Container(
                                 width: MediaQuery.of(context).size.width,
                                 padding: EdgeInsets.only(
-                                  left: 75.w*0.75,
-                                  top: 50.h*0.779,
+                                  left: 75.w * 0.75,
+                                  top: 50.h * 0.779,
                                 ),
                                 child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     normalfont("매장정보", 46, Color(0xff4d4d4d)),
                                     Padding(
-                                        padding: EdgeInsets.only(top: 10.h*0.779)),
+                                        padding:
+                                            EdgeInsets.only(top: 10.h * 0.779)),
                                     normalfont(
                                         data.store_info == "undefined"
                                             ? '준비 중입니다.'
@@ -842,10 +840,12 @@ class _ListSubState extends State<ListSub> {
                                         46,
                                         Color(0xff808080)),
                                     Padding(
-                                        padding: EdgeInsets.only(top: 30.h*0.779)),
+                                        padding:
+                                            EdgeInsets.only(top: 30.h * 0.779)),
                                     normalfont("홈페이지", 46, Color(0xff4d4d4d)),
                                     Padding(
-                                        padding: EdgeInsets.only(top: 10.h*0.779)),
+                                        padding:
+                                            EdgeInsets.only(top: 10.h * 0.779)),
                                     InkWell(
                                       child: normalfont(
                                           data.url == "undefined"
@@ -862,7 +862,8 @@ class _ListSubState extends State<ListSub> {
                                       },
                                     ),
                                     Padding(
-                                        padding: EdgeInsets.only(top: 50.h*0.779)),
+                                        padding:
+                                            EdgeInsets.only(top: 50.h * 0.779)),
                                   ],
                                 ),
                               ),
@@ -872,21 +873,22 @@ class _ListSubState extends State<ListSub> {
                               child: Container(
                                 width: MediaQuery.of(context).size.width,
                                 padding: EdgeInsets.only(
-                                  left: 75.w*0.75,
-                                  top: 50.h*0.779,
+                                  left: 75.w * 0.75,
+                                  top: 50.h * 0.779,
                                 ),
                                 child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     normalfont(
                                         "관람 / 체험료", 46, Color(0xff4d4d4d)),
                                     Padding(
-                                        padding: EdgeInsets.only(top: 10.h*0.779)),
+                                        padding:
+                                            EdgeInsets.only(top: 10.h * 0.779)),
                                     normalfont("${data.admission_fee}", 46,
                                         Color(0xff808080)),
                                     Padding(
-                                        padding: EdgeInsets.only(top: 50.h*0.779)),
+                                        padding:
+                                            EdgeInsets.only(top: 50.h * 0.779)),
                                   ],
                                 ),
                               ),
@@ -894,7 +896,7 @@ class _ListSubState extends State<ListSub> {
                           }
                         }()),
                         Container(
-                          height: 26 * height.h*0.779,
+                          height: 26 * height.h * 0.779,
                           color: Color(0xfff7f7f7),
                         ),
                         ConnectionController.to.connectionstauts !=
@@ -902,26 +904,26 @@ class _ListSubState extends State<ListSub> {
                             ? Container(
                                 child: Container(
                                 //  height: 1300 .h*0.779,
-                                width: 1500.w*0.75,
+                                width: 1500.w * 0.75,
                                 child: Column(
                                     crossAxisAlignment:
                                         CrossAxisAlignment.start,
                                     children: [
                                       Container(
                                         padding: EdgeInsets.only(
-                                          left: 75.w*0.75,
-                                          top: 50.h*0.779,
+                                          left: 75.w * 0.75,
+                                          top: 50.h * 0.779,
                                         ),
                                         child: normalfont(
                                             "위치", 46, Color(0xff4d4d4d)),
                                       ),
                                       Padding(
-                                          padding:
-                                              EdgeInsets.only(top: 30.h*0.779)),
+                                          padding: EdgeInsets.only(
+                                              top: 30.h * 0.779)),
                                       GestureDetector(
                                         onTap: () {},
                                         child: Container(
-                                          height: 1100.h*0.779,
+                                          height: 1100.h * 0.779,
                                           child: WebView(
                                             gestureRecognizers: Set()
                                               ..add(
@@ -931,24 +933,33 @@ class _ListSubState extends State<ListSub> {
                                                       VerticalDragGestureRecognizer(),
                                                 ),
                                               ),
-                                            onWebViewCreated:
-                                                (WebViewController
-                                                    webViewController) async{
+                                            onWebViewCreated: (WebViewController
+                                                webViewController) async {
                                               print(data.name);
                                               _controller = webViewController;
 
-                                              var _url = '/maps/show-place-name';
-                                              Map<String, String> queryParams = {
+                                              var _url =
+                                                  '/maps/show-place-name';
+                                              Map<String, String> queryParams =
+                                                  {
                                                 'placeName': '${data.name}',
-                                                'placeAddress': '${data.address}'
+                                                'placeAddress':
+                                                    '${data.address}'
                                               };
                                               var headers = {
-                                                HttpHeaders.contentTypeHeader: 'application/json',
-                                                HttpHeaders.acceptCharsetHeader: "UTF-8"
+                                                HttpHeaders.contentTypeHeader:
+                                                    'application/json',
+                                                HttpHeaders.acceptCharsetHeader:
+                                                    "UTF-8"
                                               };
-                                              String queryString =
-                                                  Uri(queryParameters: queryParams).query;
-                                              var requestUrl = url+_url + '?' + queryString;
+                                              String queryString = Uri(
+                                                      queryParameters:
+                                                          queryParams)
+                                                  .query;
+                                              var requestUrl = url +
+                                                  _url +
+                                                  '?' +
+                                                  queryString;
                                               print(requestUrl);
                                               await _controller.loadUrl(
                                                 requestUrl,
@@ -965,60 +976,52 @@ class _ListSubState extends State<ListSub> {
                         InkWell(
                           onTap: () {
                             Get.to(ReviseSuggest(
-                                placeId: data.id,
-                                placeCategoryId: placeCode));
+                                placeId: data.id, placeCategoryId: placeCode));
                           },
                           child: Container(
                             child: Container(
-                              height: 170.h*0.779,
+                              height: 170.h * 0.779,
                               child: Center(
                                 child: Image.asset(
                                   "./assets/sublistPage/modify.png",
-                                  height: 80.h*0.779,
+                                  height: 80.h * 0.779,
                                 ),
                               ),
                             ),
                           ),
                         ),
                         Container(
-                          height: 26 * height.h*0.779,
+                          height: 26 * height.h * 0.779,
                           color: Color(0xfff7f7f7),
                         ),
                         placeCode == 2
                             ? Container(
                                 margin: EdgeInsets.only(
-                                    top: 36 * height.h*0.779,
-                                    left: 35 * width.w*0.75,
-                                    right: 35 * width.w*0.75,
-                                    bottom: 253 * height.h*0.779),
-                                padding: EdgeInsets.all(18 * width.w*0.75),
+                                    top: 36 * height.h * 0.779,
+                                    left: 35 * width.w * 0.75,
+                                    right: 35 * width.w * 0.75,
+                                    bottom: 253 * height.h * 0.779),
+                                padding: EdgeInsets.all(18 * width.w * 0.75),
                                 decoration: BoxDecoration(
                                     color: Color.fromRGBO(255, 114, 142, 0.1),
                                     border: Border.all(
-                                      color:
-                                          Color.fromRGBO(255, 114, 142, 0.7),
+                                      color: Color.fromRGBO(255, 114, 142, 0.7),
                                     ),
-                                    borderRadius: BorderRadius.all(
-                                        Radius.circular(10))),
+                                    borderRadius:
+                                        BorderRadius.all(Radius.circular(10))),
                                 child: Column(
                                   children: [
                                     Row(
                                       children: [
-                                        boldfont(
-                                            "특정의료기관에 대한 리뷰",
-                                            46,
-                                            Color.fromRGBO(
-                                                255, 114, 142, 0.7)),
-                                        normalfont(
-                                            "는 의료법에 따라 치료 효과로",
-                                            46,
-                                            Color.fromRGBO(
-                                                255, 114, 142, 0.7))
+                                        boldfont("특정의료기관에 대한 리뷰", 38,
+                                            Color.fromRGBO(255, 114, 142, 0.7)),
+                                        normalfont("는 의료법에 따라 치료 효과로 오인", 38,
+                                            Color.fromRGBO(255, 114, 142, 0.7))
                                       ],
                                     ),
                                     normalfont(
-                                        "오인하게 할 우려가 있고, 환자 유인행위의 소지가 있어 리뷰를 작성할 수 없습니다.",
-                                        46,
+                                        "하게 할 우려가 있고, 환자 유인행위의 소지가 있어 리뷰를     작성할 수 없습니다.",
+                                        38,
                                         Color.fromRGBO(255, 114, 142, 0.7))
                                   ],
                                 ))
@@ -1027,8 +1030,8 @@ class _ListSubState extends State<ListSub> {
                         placeCode == 1
                             ? Container(
                                 margin: EdgeInsets.only(
-                                  left: 87 * width.w*0.75,
-                                  top: 36 * height.h*0.779,
+                                  left: 87 * width.w * 0.75,
+                                  top: 36 * height.h * 0.779,
                                 ),
                                 child: Column(
                                   children: [
@@ -1037,18 +1040,16 @@ class _ListSubState extends State<ListSub> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Container(
-                                            width: 210 * height.h*0.779,
+                                            width: 210 * height.h * 0.779,
                                             child: RichText(
                                               textAlign: TextAlign.center,
                                               text: TextSpan(
                                                 style: TextStyle(
                                                     color: Color(0xff939393),
-                                                    fontWeight:
-                                                        FontWeight.w500,
+                                                    fontWeight: FontWeight.w500,
                                                     fontFamily:
                                                         "NotoSansCJKkr_Medium",
-                                                    fontStyle:
-                                                        FontStyle.normal,
+                                                    fontStyle: FontStyle.normal,
                                                     fontSize: 46.sp),
                                                 children: <TextSpan>[
                                                   TextSpan(
@@ -1059,8 +1060,8 @@ class _ListSubState extends State<ListSub> {
                                                               FontWeight.w500,
                                                           fontFamily:
                                                               "NotoSansCJKkr_Bold",
-                                                          fontStyle: FontStyle
-                                                              .normal,
+                                                          fontStyle:
+                                                              FontStyle.normal,
                                                           fontSize: 46.sp)),
                                                   TextSpan(text: '에'),
                                                   data.name.length < 5
@@ -1087,36 +1088,41 @@ class _ListSubState extends State<ListSub> {
                                             ),
                                         Padding(
                                           padding: EdgeInsets.only(
-                                            left: 44 * width.w*0.75,
+                                            left: 85 * width.w * 0.75,
                                           ),
                                         ),
                                         isMyId
-                                            ? InkWell(
-                                                child: Image.asset(
-                                                  "./assets/sublistPage/reviewrevisebutton.png",
-                                                  height: 54 * height.h*0.779,
-                                                ),
-                                                onTap: () async {
-                                                  if (_isnickname == true) {
-                                                    var result = await Get.to(
-                                                        ReviewPage(
-                                                            reviewData: datas,
-                                                            data: data));
+                                            ? Container(
+                                                margin:
+                                                    EdgeInsets.only(top: 22.h),
+                                                child: InkWell(
+                                                  child: Image.asset(
+                                                    "./assets/sublistPage/reviewrevisebutton.png",
+                                                    height:
+                                                        54 * height.h * 0.779,
+                                                  ),
+                                                  onTap: () async {
+                                                    if (_isnickname == true) {
+                                                      var result = await Get.to(
+                                                          ReviewPage(
+                                                              reviewData: datas,
+                                                              data: data));
 
-                                                    if (result == "ok") {
-                                                      await select(option);
-                                                      setState(() {});
+                                                      if (result == "ok") {
+                                                        await select(option);
+                                                        setState(() {});
+                                                      }
+                                                    } else {
+                                                      dialog(context,
+                                                          "회원정보 수정해주세요");
                                                     }
-                                                  } else {
-                                                    dialog(context,
-                                                        "회원정보 수정해주세요");
-                                                  }
-                                                },
+                                                  },
+                                                ),
                                               )
                                             : InkWell(
                                                 child: Image.asset(
                                                   "./assets/sublistPage/reviewbutton.png",
-                                                  height: 54 * height.h*0.779,
+                                                  height: 54 * height.h * 0.779,
                                                 ),
                                                 onTap: () async {
                                                   if (_isnickname == true) {
@@ -1130,8 +1136,8 @@ class _ListSubState extends State<ListSub> {
                                                       setState(() {});
                                                     }
                                                   } else {
-                                                    dialog(context,
-                                                        "회원정보 수정해주세요");
+                                                    dialog(
+                                                        context, "회원정보 수정해주세요");
                                                   }
                                                 },
                                               ),
@@ -1144,7 +1150,8 @@ class _ListSubState extends State<ListSub> {
                         placeCode == 1
                             ? Container(
                                 margin: EdgeInsets.only(
-                                    left: 36 * width.w*0.75, top: 36 * width.h*0.779),
+                                    left: 36 * width.w * 0.75,
+                                    top: 36 * width.h * 0.779),
                                 child: Stack(
                                   children: [
                                     Container(
@@ -1165,30 +1172,27 @@ class _ListSubState extends State<ListSub> {
                                             ),
                                             borderRadius: BorderRadius.all(
                                                 Radius.circular(20))),
-                                        height: 193 * height.h*0.779,
-                                        width: 648 * width.w*0.75),
+                                        height: 193 * height.h * 0.779,
+                                        width: 648 * width.w * 0.75),
                                     score.length > 0
                                         ? Container(
-                                            margin:
-                                                EdgeInsets.only(top: 35.h*0.779),
+                                            margin: EdgeInsets.only(
+                                                top: 35.h * 0.779),
                                             child: Row(
                                               children: [
                                                 Padding(
                                                   padding: EdgeInsets.only(
-                                                      left: 22 * height.h*0.779),
+                                                      left: 22 *
+                                                          height.h *
+                                                          0.779),
                                                 ),
                                                 Column(
                                                   crossAxisAlignment:
-                                                      CrossAxisAlignment
-                                                          .center,
+                                                      CrossAxisAlignment.center,
                                                   children: [
-                                                    normalfont(
-                                                        "고객만족도",
-                                                        46,
+                                                    normalfont("고객만족도", 46,
                                                         Color(0xff939393)),
-                                                    boldfont(
-                                                        '${aver}',
-                                                        70,
+                                                    boldfont('${aver}', 70,
                                                         Color(0xff3a3939)),
                                                     Row(
                                                       children: [
@@ -1198,16 +1202,17 @@ class _ListSubState extends State<ListSub> {
                                                                     .toInt();
                                                             i++)
                                                           Container(
-                                                            margin: EdgeInsets
-                                                                .only(
+                                                            margin:
+                                                                EdgeInsets.only(
                                                                     right: 12 *
                                                                         width
-                                                                            .w*0.75),
-                                                            child:
-                                                                Image.asset(
+                                                                            .w *
+                                                                        0.75),
+                                                            child: Image.asset(
                                                               "./assets/listPage/star_color.png",
                                                               width: 38 *
-                                                                  width.w*0.75,
+                                                                  width.w *
+                                                                  0.75,
                                                             ),
                                                           ),
                                                         (averStar -
@@ -1218,12 +1223,14 @@ class _ListSubState extends State<ListSub> {
                                                                 margin: EdgeInsets.only(
                                                                     right: 12 *
                                                                         width
-                                                                            .w*0.75),
-                                                                child: Image
-                                                                    .asset(
+                                                                            .w *
+                                                                        0.75),
+                                                                child:
+                                                                    Image.asset(
                                                                   "./assets/listPage/star_half.png",
                                                                   width: 38 *
-                                                                      width.w*0.75,
+                                                                      width.w *
+                                                                      0.75,
                                                                 ),
                                                               )
                                                             : Container(),
@@ -1235,17 +1242,18 @@ class _ListSubState extends State<ListSub> {
                                                                         .toInt();
                                                             i++)
                                                           Container(
-                                                            child:
-                                                                Image.asset(
+                                                            child: Image.asset(
                                                               "./assets/listPage/star_grey.png",
                                                               width: 38 *
-                                                                  width.w*0.75,
+                                                                  width.w *
+                                                                  0.75,
                                                             ),
-                                                            margin: EdgeInsets
-                                                                .only(
+                                                            margin:
+                                                                EdgeInsets.only(
                                                                     right: 12 *
                                                                         width
-                                                                            .w*0.75),
+                                                                            .w *
+                                                                        0.75),
                                                           ),
                                                       ],
                                                     ),
@@ -1253,24 +1261,28 @@ class _ListSubState extends State<ListSub> {
                                                 ),
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        left: 30 * width.w*0.75)),
+                                                        left: 30 *
+                                                            width.w *
+                                                            0.75)),
                                                 Column(
                                                   children: [
                                                     Image.asset(
                                                       "./assets/sublistPage/line.png",
-                                                      height: 146 * height.h*0.779,
+                                                      height: 146 *
+                                                          height.h *
+                                                          0.779,
                                                     ),
                                                   ],
                                                 ),
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        left: 35 * width.w*0.75)),
+                                                        left: 35 *
+                                                            width.w *
+                                                            0.75)),
                                                 Column(
                                                   children: [
-                                                    normalfont(
-                                                        '${score[4]}',
-                                                        40,
-                                                        Color(0xffa9a9a9)),
+                                                    normalfont('${score[4]}',
+                                                        40, Color(0xffa9a9a9)),
                                                     scoreImage(4),
                                                     normalfont("5점", 40,
                                                         Color(0xffa9a9a9)),
@@ -1278,13 +1290,13 @@ class _ListSubState extends State<ListSub> {
                                                 ),
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        left: 21 * width.w*0.75)),
+                                                        left: 21 *
+                                                            width.w *
+                                                            0.75)),
                                                 Column(
                                                   children: [
-                                                    normalfont(
-                                                        '${score[3]}',
-                                                        40,
-                                                        Color(0xffa9a9a9)),
+                                                    normalfont('${score[3]}',
+                                                        40, Color(0xffa9a9a9)),
                                                     scoreImage(3),
                                                     normalfont("4점", 40,
                                                         Color(0xffa9a9a9)),
@@ -1292,13 +1304,13 @@ class _ListSubState extends State<ListSub> {
                                                 ),
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        left: 21 * width.w*0.75)),
+                                                        left: 21 *
+                                                            width.w *
+                                                            0.75)),
                                                 Column(
                                                   children: [
-                                                    normalfont(
-                                                        '${score[2]}',
-                                                        40,
-                                                        Color(0xffa9a9a9)),
+                                                    normalfont('${score[2]}',
+                                                        40, Color(0xffa9a9a9)),
                                                     scoreImage(2),
                                                     normalfont("3점", 40,
                                                         Color(0xffa9a9a9)),
@@ -1306,13 +1318,13 @@ class _ListSubState extends State<ListSub> {
                                                 ),
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        left: 21 * width.w*0.75)),
+                                                        left: 21 *
+                                                            width.w *
+                                                            0.75)),
                                                 Column(
                                                   children: [
-                                                    normalfont(
-                                                        '${score[1]}',
-                                                        40,
-                                                        Color(0xffa9a9a9)),
+                                                    normalfont('${score[1]}',
+                                                        40, Color(0xffa9a9a9)),
                                                     scoreImage(1),
                                                     normalfont("2점", 40,
                                                         Color(0xffa9a9a9)),
@@ -1320,13 +1332,13 @@ class _ListSubState extends State<ListSub> {
                                                 ),
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        left: 21 * width.w*0.75)),
+                                                        left: 21 *
+                                                            width.w *
+                                                            0.75)),
                                                 Column(
                                                   children: [
-                                                    normalfont(
-                                                        '${score[0]}',
-                                                        40,
-                                                        Color(0xffa9a9a9)),
+                                                    normalfont('${score[0]}',
+                                                        40, Color(0xffa9a9a9)),
                                                     scoreImage(0),
                                                     normalfont("1점", 40,
                                                         Color(0xffa9a9a9)),
@@ -1334,7 +1346,9 @@ class _ListSubState extends State<ListSub> {
                                                 ),
                                                 Padding(
                                                     padding: EdgeInsets.only(
-                                                        left: 21 * width.w*0.75)),
+                                                        left: 21 *
+                                                            width.w *
+                                                            0.75)),
                                               ],
                                             ),
                                           )
@@ -1346,9 +1360,11 @@ class _ListSubState extends State<ListSub> {
 
                         placeCode == 1
                             ? Padding(
-                                padding: EdgeInsets.only(top: 36 * width.w*0.75))
+                                padding:
+                                    EdgeInsets.only(top: 36 * width.w * 0.75))
                             : Padding(
-                                padding: EdgeInsets.only(top: 0 * width.w*0.75)),
+                                padding:
+                                    EdgeInsets.only(top: 0 * width.w * 0.75)),
 
                         // 4 images
 
@@ -1356,18 +1372,19 @@ class _ListSubState extends State<ListSub> {
                             ? Row(
                                 children: [
                                   Padding(
-                                      padding: EdgeInsets.only(left: 36.w*0.75)),
+                                      padding:
+                                          EdgeInsets.only(left: 36.w * 0.75)),
                                   for (int i = 0; i < prevImage.length; i++)
                                     i < 3
                                         ? Container(
                                             margin: EdgeInsets.only(
-                                                left: 18 * width.w*0.75),
+                                                left: 18 * width.w * 0.75),
                                             child: ClipRRect(
                                               borderRadius:
                                                   BorderRadius.circular(10.0),
                                               child: SizedBox(
-                                                width: 148 * width.w*0.75,
-                                                height: 148 * height.w*0.75,
+                                                width: 148 * width.w * 0.75,
+                                                height: 148 * height.w * 0.75,
                                                 child: Image.network(
                                                   prevImage[i],
                                                   fit: BoxFit.cover,
@@ -1381,7 +1398,7 @@ class _ListSubState extends State<ListSub> {
                                             },
                                             child: Container(
                                               margin: EdgeInsets.only(
-                                                  left: 18 * width.w*0.75),
+                                                  left: 18 * width.w * 0.75),
                                               child: ClipRRect(
                                                   borderRadius:
                                                       BorderRadius.circular(
@@ -1389,31 +1406,41 @@ class _ListSubState extends State<ListSub> {
                                                   child: Stack(
                                                     children: [
                                                       SizedBox(
-                                                        width: 148 * width.w*0.75,
-                                                        height:
-                                                            148 * height.w*0.75,
+                                                        width: 148 *
+                                                            width.w *
+                                                            0.75,
+                                                        height: 148 *
+                                                            height.w *
+                                                            0.75,
                                                         child: Image.network(
                                                           prevImage[i],
                                                           fit: BoxFit.cover,
                                                         ),
                                                       ),
                                                       Container(
-                                                        width: 148 * width.w*0.75,
-                                                        height:
-                                                            148 * height.w*0.75,
+                                                        width: 148 *
+                                                            width.w *
+                                                            0.75,
+                                                        height: 148 *
+                                                            height.w *
+                                                            0.75,
                                                         color: Colors.black
                                                             .withOpacity(0.5),
                                                       ),
                                                       Container(
-                                                        width: 148 * width.w*0.75,
-                                                        height: 148 * width.w*0.75,
+                                                        width: 148 *
+                                                            width.w *
+                                                            0.75,
+                                                        height: 148 *
+                                                            width.w *
+                                                            0.75,
                                                         child: Center(
                                                           child: Image.asset(
                                                             "./assets/reviewPage/plus.png",
-                                                            color:
-                                                                Colors.white,
-                                                            width:
-                                                                38 * width.w*0.75,
+                                                            color: Colors.white,
+                                                            width: 38 *
+                                                                width.w *
+                                                                0.75,
                                                           ),
                                                         ),
                                                       )
@@ -1426,12 +1453,14 @@ class _ListSubState extends State<ListSub> {
                             : Container(),
                         placeCode == 1
                             ? Padding(
-                                padding: EdgeInsets.only(top: 36 * width.w*0.75))
+                                padding:
+                                    EdgeInsets.only(top: 36 * width.w * 0.75))
                             : Padding(
-                                padding: EdgeInsets.only(top: 0 * width.w*0.75)),
+                                padding:
+                                    EdgeInsets.only(top: 0 * width.w * 0.75)),
                         placeCode == 1
                             ? Container(
-                                height: 26 * height.h*0.779,
+                                height: 26 * height.h * 0.779,
                                 color: Color(0xfff7f7f7),
                               )
                             : Container(),
@@ -1445,12 +1474,11 @@ class _ListSubState extends State<ListSub> {
                                   children: [
                                     Padding(
                                         padding: EdgeInsets.only(
-                                            top: 80 * height.h*0.779,
-                                            left: 35 * width.w*0.75)),
-                                    normalfont(
-                                        "리뷰 ",46, Color(0xff4d4d4d)),
-                                    normalfont(reviewData.length.toString(),
-                                       46, Color(0xffe9718d)),
+                                            top: 80 * height.h * 0.779,
+                                            left: 35 * width.w * 0.75)),
+                                    normalfont("리뷰 ", 46, Color(0xff4d4d4d)),
+                                    normalfont(reviewData.length.toString(), 46,
+                                        Color(0xffe9718d)),
                                     Spacer(),
                                     Container(
                                       child: Row(
@@ -1501,8 +1529,8 @@ class _ListSubState extends State<ListSub> {
                                       ),
                                     ),
                                     Padding(
-                                        padding:
-                                            EdgeInsets.only(right: 38.w*0.75)),
+                                        padding: EdgeInsets.only(
+                                            right: 38.w * 0.75)),
                                   ],
                                 ),
                               )
@@ -1523,15 +1551,14 @@ class _ListSubState extends State<ListSub> {
                                   width: double.infinity,
                                   color: Colors.white,
                                   child: Column(
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.start,
+                                    mainAxisAlignment: MainAxisAlignment.start,
                                     children: [
                                       Container(
                                         margin: EdgeInsets.fromLTRB(
-                                            40 * width.w*0.75,
-                                            30.h*0.779,
-                                            40 * width.w*0.75,
-                                            33.h*0.779),
+                                            40 * width.w * 0.75,
+                                            30.h * 0.779,
+                                            40 * width.w * 0.75,
+                                            33.h * 0.779),
                                         width: double.infinity,
                                         child: Column(
                                           children: [
@@ -1543,12 +1570,13 @@ class _ListSubState extends State<ListSub> {
                                                 reviewData[index].profile !=
                                                         null
                                                     ? CircleAvatar(
-                                                        radius: 40 * width.w*0.75,
+                                                        radius:
+                                                            40 * width.w * 0.75,
                                                         child: Container(
                                                           decoration:
                                                               BoxDecoration(
-                                                            shape: BoxShape
-                                                                .circle,
+                                                            shape:
+                                                                BoxShape.circle,
                                                             image: DecorationImage(
                                                                 image: NetworkImage(
                                                                     reviewData[
@@ -1560,12 +1588,13 @@ class _ListSubState extends State<ListSub> {
                                                         ),
                                                       )
                                                     : CircleAvatar(
-                                                        radius: 40 * width.w*0.75,
+                                                        radius:
+                                                            40 * width.w * 0.75,
                                                         child: Container(
                                                           decoration:
                                                               BoxDecoration(
-                                                            shape: BoxShape
-                                                                .circle,
+                                                            shape:
+                                                                BoxShape.circle,
                                                             image: DecorationImage(
                                                                 image: AssetImage(
                                                                     "./assets/myPage/avatar.png"),
@@ -1578,7 +1607,8 @@ class _ListSubState extends State<ListSub> {
                                                 // Container after avatar image
                                                 Container(
                                                   margin: EdgeInsets.only(
-                                                      left: 15 * width.w*0.75),
+                                                      left:
+                                                          15 * width.w * 0.75),
                                                   child: Column(
                                                     mainAxisAlignment:
                                                         MainAxisAlignment
@@ -1595,10 +1625,12 @@ class _ListSubState extends State<ListSub> {
                                                               46,
                                                               Colors.black),
                                                           Padding(
-                                                              padding: EdgeInsets.only(
-                                                                  left: 5 *
-                                                                      width
-                                                                          .w*0.75)),
+                                                              padding: EdgeInsets
+                                                                  .only(
+                                                                      left: 5 *
+                                                                          width
+                                                                              .w *
+                                                                          0.75)),
                                                           normalfont(
                                                               "${reviewData[index].created_at} ",
                                                               46,
@@ -1612,17 +1644,17 @@ class _ListSubState extends State<ListSub> {
                                                           average('맛',
                                                               "${reviewData[index].taste_rating}"),
                                                           Padding(
-                                                              padding: EdgeInsets.only(
-                                                                  left: 8 *
-                                                                      width
-                                                                          .w*0.75)),
+                                                              padding: EdgeInsets
+                                                                  .only(
+                                                                      left: 15
+                                                                          .w)),
                                                           average('가격',
                                                               "${reviewData[index].cost_rating}"),
                                                           Padding(
                                                               padding: EdgeInsets
                                                                   .only(
-                                                                      left: 8
-                                                                          .w*0.75)),
+                                                                      left: 15
+                                                                          .w)),
                                                           average('서비스',
                                                               "${reviewData[index].service_rating}"),
                                                         ],
@@ -1649,15 +1681,14 @@ class _ListSubState extends State<ListSub> {
                                                                   "ok") {
                                                                 await select(
                                                                     option);
-                                                                setState(
-                                                                    () {});
+                                                                setState(() {});
                                                               }
                                                             },
                                                             child: Text(
                                                               "수정",
                                                               style: TextStyle(
-                                                                  fontSize: 46
-                                                                          .sp,
+                                                                  fontSize:
+                                                                      40.sp,
                                                                   fontFamily:
                                                                       "NotoSansCJKkr_Medium",
                                                                   color: Color
@@ -1669,10 +1700,12 @@ class _ListSubState extends State<ListSub> {
                                                             ),
                                                           ),
                                                           Padding(
-                                                              padding: EdgeInsets.only(
-                                                                  left: 20 *
-                                                                      width
-                                                                          .w*0.75)),
+                                                              padding: EdgeInsets
+                                                                  .only(
+                                                                      left: 20 *
+                                                                          width
+                                                                              .w *
+                                                                          0.75)),
                                                           InkWell(
                                                             onTap: () {
                                                               return showDialog(
@@ -1687,7 +1720,8 @@ class _ListSubState extends State<ListSub> {
                                                                     shape:
                                                                         RoundedRectangleBorder(
                                                                       borderRadius:
-                                                                          BorderRadius.all(Radius.circular(20.0)),
+                                                                          BorderRadius.all(
+                                                                              Radius.circular(20.0)),
                                                                     ),
                                                                     title: normalfont(
                                                                         "리뷰를 삭제하시겠습니까?",
@@ -1703,14 +1737,17 @@ class _ListSubState extends State<ListSub> {
                                                                             Color(0xffff7292)),
                                                                         onPressed:
                                                                             () async {
-                                                                          Navigator.pop(context,
+                                                                          Navigator.pop(
+                                                                              context,
                                                                               "OK");
-                                                                          await delete(reviewData[index].id);
+                                                                          await delete(
+                                                                              reviewData[index].id);
                                                                           datas =
                                                                               null;
                                                                           isMyId =
                                                                               false;
-                                                                          await select(option);
+                                                                          await select(
+                                                                              option);
                                                                         },
                                                                       ),
                                                                       FlatButton(
@@ -1720,7 +1757,8 @@ class _ListSubState extends State<ListSub> {
                                                                             Color(0xffff7292)),
                                                                         onPressed:
                                                                             () {
-                                                                          Navigator.pop(context,
+                                                                          Navigator.pop(
+                                                                              context,
                                                                               "Cancel");
                                                                         },
                                                                       ),
@@ -1732,9 +1770,8 @@ class _ListSubState extends State<ListSub> {
                                                             child: Text(
                                                               "삭제",
                                                               style: TextStyle(
-                                                                  fontSize: 46
-
-                                                                          .sp,
+                                                                  fontSize:
+                                                                      40.sp,
                                                                   fontFamily:
                                                                       "NotoSansCJKkr_Medium",
                                                                   color: Color
@@ -1751,8 +1788,7 @@ class _ListSubState extends State<ListSub> {
                                                         onTap: () {
                                                           report(
                                                               context,
-                                                              reviewData[
-                                                                      index]
+                                                              reviewData[index]
                                                                   .id);
                                                         },
                                                         child: Text(
@@ -1775,13 +1811,14 @@ class _ListSubState extends State<ListSub> {
                                             Container(
                                               width: double.infinity,
                                               margin: EdgeInsets.only(
-                                                  top: 16 * width.w*0.75),
+                                                  top: 16 * width.w * 0.75),
                                               padding: EdgeInsets.symmetric(
-                                                  horizontal: 13 * width.w*0.75,
-                                                  vertical: 19 * width.w*0.75),
+                                                  horizontal:
+                                                      13 * width.w * 0.75,
+                                                  vertical:
+                                                      19 * width.w * 0.75),
                                               decoration: BoxDecoration(
-                                                borderRadius:
-                                                    BorderRadius.all(
+                                                borderRadius: BorderRadius.all(
                                                   Radius.circular(10),
                                                 ),
                                                 color: Color.fromRGBO(
@@ -1803,16 +1840,17 @@ class _ListSubState extends State<ListSub> {
                                                 imageList[index] == null
                                                     ? Container()
                                                     : Container(
-                                                        height:
-                                                            236 * height.h*0.779,
+                                                        height: 236 *
+                                                            height.h *
+                                                            0.779,
                                                         child: ListView(
                                                           scrollDirection:
                                                               Axis.horizontal,
                                                           padding:
                                                               EdgeInsets.only(
                                                                   top: 16 *
-                                                                      height
-                                                                          .h*0.779),
+                                                                      height.h *
+                                                                      0.779),
                                                           children: <Widget>[
                                                             for (int i = 0;
                                                                 i <
@@ -1825,9 +1863,12 @@ class _ListSubState extends State<ListSub> {
                                                                     Container(
                                                                   margin: EdgeInsets.only(
                                                                       right: 10 *
-                                                                          width.w*0.75),
+                                                                          width
+                                                                              .w *
+                                                                          0.75),
                                                                   width: 308 *
-                                                                      width.w*0.75,
+                                                                      width.w *
+                                                                      0.75,
                                                                   decoration:
                                                                       BoxDecoration(
                                                                     borderRadius:
@@ -1863,8 +1904,8 @@ class _ListSubState extends State<ListSub> {
                                         ),
                                       ),
                                       Divider(
-                                        color: Color.fromRGBO(
-                                            212, 212, 212, 1.0),
+                                        color:
+                                            Color.fromRGBO(212, 212, 212, 1.0),
                                       )
                                     ],
                                   ),
@@ -1874,7 +1915,7 @@ class _ListSubState extends State<ListSub> {
                           );
                         }()),
                         Container(
-                          height: 300.h*0.779,
+                          height: 300.h * 0.779,
                         )
                       ],
                     ),
@@ -1883,13 +1924,13 @@ class _ListSubState extends State<ListSub> {
               ],
             ),
             Container(
-              margin: EdgeInsets.only(left: 1150.w*0.75, top: 2100.h*0.779),
+              margin: EdgeInsets.only(left: 1150.w * 0.75, top: 2100.h * 0.779),
               child: InkWell(
                 onTap: () {
                   _scrollController.jumpTo(1);
                 },
-                child:
-                    Image.asset("./assets/sublistPage/top.png", width: 350.w*0.75),
+                child: Image.asset("./assets/sublistPage/top.png",
+                    width: 350.w * 0.75),
               ),
             ),
           ],
@@ -1902,35 +1943,35 @@ class _ListSubState extends State<ListSub> {
     if (maxScore == score[i] && score[i] != 0) {
       return Image.asset(
         "./assets/sublistPage/bar6.png",
-        height: 89 * height.h*0.779,
+        height: 89 * height.h * 0.779,
       );
     } else {
       if (score[i] == 0) {
         return Image.asset(
           "./assets/sublistPage/bar1.png",
-          height: 89 * height.h*0.779,
+          height: 89 * height.h * 0.779,
         );
       } else if (0 <= score[i] || score[i] <= maxScore * (1 / 4).ceil()) {
         return Image.asset(
           "./assets/sublistPage/bar2.png",
-          height: 89 * height.h*0.779,
+          height: 89 * height.h * 0.779,
         );
       } else if (maxScore * (1 / 4).ceil() < score[i] ||
           score[i] <= maxScore * (2 / 4).ceil()) {
         return Image.asset(
           "./assets/sublistPage/bar3.png",
-          height: 89 * height.h*0.779,
+          height: 89 * height.h * 0.779,
         );
       } else if (maxScore * (2 / 4).ceil() < score[i] ||
           score[i] <= maxScore * (3 / 4).ceil()) {
         return Image.asset(
           "./assets/sublistPage/bar4.png",
-          height: 89 * height.h*0.779,
+          height: 89 * height.h * 0.779,
         );
       } else {
         return Image.asset(
           "./assets/sublistPage/bar5.png",
-          height: 89 * height.h*0.779,
+          height: 89 * height.h * 0.779,
         );
       }
     }

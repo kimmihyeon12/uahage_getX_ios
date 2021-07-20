@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:uahage/src/Controller/user.controller.dart';
@@ -8,7 +7,6 @@ import 'package:uahage/src/Static/Image/homeImage.dart';
 import 'package:uahage/src/Static/Widget/appbar.dart';
 import 'package:get/get.dart';
 import 'package:uahage/src/Static/Widget/toast.dart';
-import 'package:uahage/src/View/Nav/HomeSub/searchBar.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -85,8 +83,15 @@ class _HomeState extends State<Home> {
                     ),
                     Container(
                       margin: EdgeInsets.only(left: 65.w, top: 55.h),
-                      child: boldfont(
-                          "영·유아 보호자와\n함께하는\n정보제공 서비스", 64, Color(0xffff7292)),
+                      child: Text("영·유아 보호자와\n함께하는\n정보제공 서비스",
+                          style: TextStyle(
+                              height: 1.2,
+                              color: Color(0xffff7292),
+                              //fontWeight: FontWeight.w700,
+                              fontFamily: "NotoSansCJKkr_Medium",
+                              fontStyle: FontStyle.normal,
+                              fontSize: 64.sp),
+                          textAlign: TextAlign.left),
                     )
                   ],
                 ),
@@ -140,9 +145,8 @@ class _HomeState extends State<Home> {
                           onPressed: keyword != ""
                               ? () {
                                   //  FocusScope.of(context).unfocus();
-print("home keyword : $keyword");
-                                  Get.toNamed("/searchbar",
-                                      arguments: keyword);
+                                  print("home keyword : $keyword");
+                                  Get.toNamed("/searchbar", arguments: keyword);
                                 }
                               : () {
                                   toast(context, "주소를 입력해주세요!", "bottom");
@@ -282,13 +286,13 @@ print("home keyword : $keyword");
                       ),
                       Padding(
                           padding: EdgeInsets.only(
-                        left: 171 .w,
+                        left: 171.w,
                       )),
                       GestureDetector(
                         child: Image.asset(
                           homeimage[7],
                           width: 117.3.w,
-                          height: 181 .h,
+                          height: 181.h,
                         ),
                         onTap: () {
                           //   currentFocus.unfocus();

@@ -62,8 +62,7 @@ class Announce extends StatelessWidget {
                             42,
                             Color(0xff979797)),
                       ),
-                      boldfont(
-                          "제 3 조 (이용약관의 명시와 설명 및 개정)\n", 42, Colors.black),
+                      boldfont("제 3 조 (이용약관의 명시와 설명 및 개정)\n", 42, Colors.black),
                       Container(
                         margin: EdgeInsets.only(left: 30.w),
                         child: normalfont(
@@ -74,8 +73,8 @@ class Announce extends StatelessWidget {
                             42,
                             Color(0xff979797)),
                       ),
-                      boldfont("\n제 4 조 (약관 외 준칙 및 관련법령과의 관계)\n", 42,
-                          Colors.black),
+                      boldfont(
+                          "\n제 4 조 (약관 외 준칙 및 관련법령과의 관계)\n", 42, Colors.black),
                       Container(
                         margin: EdgeInsets.only(left: 30.w),
                         child: normalfont(
@@ -85,8 +84,8 @@ class Announce extends StatelessWidget {
                             Color(0xff979797)),
                       ),
                       Center(
-                          child: boldfont(
-                              "\n제 2 장 이용계약 체결\n", 42, Colors.black)),
+                          child:
+                              boldfont("\n제 2 장 이용계약 체결\n", 42, Colors.black)),
                       boldfont("제 5 조 (이용계약의 성립)\n", 42, Colors.black),
                       Container(
                         margin: EdgeInsets.only(left: 30.w),
@@ -124,8 +123,8 @@ class Announce extends StatelessWidget {
                       boldfont("\n제 6 조 (이용계약의 종료)\n", 42, Colors.black),
                       Container(
                         margin: EdgeInsets.only(left: 30.w),
-                        child: normalfont(
-                            """1. 회원의 해지""", 42, Color(0xff979797)),
+                        child:
+                            normalfont("""1. 회원의 해지""", 42, Color(0xff979797)),
                       ),
                       Container(
                         margin: EdgeInsets.only(left: 90.w),
@@ -135,8 +134,8 @@ class Announce extends StatelessWidget {
                       ),
                       Container(
                         margin: EdgeInsets.only(left: 30.w),
-                        child: normalfont(
-                            """2. 회사의 해지""", 42, Color(0xff979797)),
+                        child:
+                            normalfont("""2. 회사의 해지""", 42, Color(0xff979797)),
                       ),
                       Container(
                         margin: EdgeInsets.only(left: 90.w),
@@ -281,15 +280,13 @@ class Announce extends StatelessWidget {
                             Color(0xff979797)),
                       ),
                       Center(
-                          child: boldfont(
-                              "\n제 4 장 서비스의 이용\n", 42, Colors.black)),
+                          child:
+                              boldfont("\n제 4 장 서비스의 이용\n", 42, Colors.black)),
                       boldfont("제 14 조 (서비스의 제공 및 변경)\n", 42, Colors.black),
                       Container(
                         margin: EdgeInsets.only(left: 30.w),
-                        child: normalfont(
-                            """1. 회사는 회원에게 아래와 같은 서비스를 제공합니다.""",
-                            42,
-                            Color(0xff979797)),
+                        child: normalfont("""1. 회사는 회원에게 아래와 같은 서비스를 제공합니다.""",
+                            42, Color(0xff979797)),
                       ),
                       Container(
                         margin: EdgeInsets.only(left: 90.w),
@@ -441,8 +438,7 @@ class Announce extends StatelessWidget {
                             42,
                             Color(0xff979797)),
                       ),
-                      boldfont(
-                          "\n제 25 조 (거래 시 가능한 결제수단)\n", 42, Colors.black),
+                      boldfont("\n제 25 조 (거래 시 가능한 결제수단)\n", 42, Colors.black),
                       Container(
                         margin: EdgeInsets.only(left: 30.w),
                         child: normalfont(
@@ -457,8 +453,7 @@ class Announce extends StatelessWidget {
                             42,
                             Color(0xff979797)),
                       ),
-                      boldfont(
-                          "\n제 26 조 (거래 시 구매결정 및 송금)\n", 42, Colors.black),
+                      boldfont("\n제 26 조 (거래 시 구매결정 및 송금)\n", 42, Colors.black),
                       Container(
                         margin: EdgeInsets.only(left: 30.w),
                         child: normalfont(
@@ -482,8 +477,7 @@ class Announce extends StatelessWidget {
                             42,
                             Color(0xff979797)),
                       ),
-                      boldfont(
-                          "\n제 28 조 (배송상품에서의 환불 특칙)\n", 42, Colors.black),
+                      boldfont("\n제 28 조 (배송상품에서의 환불 특칙)\n", 42, Colors.black),
                       Container(
                         margin: EdgeInsets.only(left: 30.w),
                         child: normalfont(
@@ -494,8 +488,7 @@ class Announce extends StatelessWidget {
                       ),
                       Container(
                         margin: EdgeInsets.only(left: 90.w),
-                        child:
-                            normalfont("""1) 회원에게 책임 있는 사유로 상품이 멸실 또는 훼손된 경우
+                        child: normalfont("""1) 회원에게 책임 있는 사유로 상품이 멸실 또는 훼손된 경우
 2) 회원의 사용 또는 일부 소비에 의하여 상품의 가치가 현저히 감소한 경우
 3) 시간의 경과에 의하여 재판매가 곤란할 정도로 상품의 가치가 현저히 감소한 경우
 4) 복제가 가능한 상품의 포장을 훼손한 경우
@@ -520,8 +513,8 @@ class Announce extends StatelessWidget {
                       boldfont("\n부 칙", 42, Colors.black),
                       Container(
                         margin: EdgeInsets.only(left: 0.w),
-                        child: normalfont("""본 약관은 2021년 7월 5일부터 적용합니다.""",
-                            42, Color(0xff979797)),
+                        child: normalfont("""본 약관은 2021년 7월 5일부터 적용합니다.""", 42,
+                            Color(0xff979797)),
                       ),
                     ],
                   ),
@@ -555,8 +548,7 @@ class Announce extends StatelessWidget {
                   margin: EdgeInsets.fromLTRB(73.w, 90.h, 75.w, 39.h),
                   child: ListView(
                     children: [
-                      Center(
-                          child: boldfont("개인정보 처리방침\n", 60, Colors.black)),
+                      Center(child: boldfont("개인정보 처리방침\n", 60, Colors.black)),
                       boldfont("제 1 조 (목적)\n", 42, Colors.black),
                       Container(
                         margin: EdgeInsets.only(left: 30.w),
@@ -573,8 +565,7 @@ class Announce extends StatelessWidget {
                             42,
                             Color(0xff979797)),
                       ),
-                      boldfont(
-                          "\n제 2 조 (개인정보 수집에 대한 동의)\n", 42, Colors.black),
+                      boldfont("\n제 2 조 (개인정보 수집에 대한 동의)\n", 42, Colors.black),
                       Container(
                         margin: EdgeInsets.only(left: 30.w),
                         child: normalfont(
@@ -615,8 +606,7 @@ class Announce extends StatelessWidget {
                       ),
                       Container(
                         margin: EdgeInsets.only(left: 90.w),
-                        child:
-                            normalfont("""1) 일반회원""", 42, Color(0xff979797)),
+                        child: normalfont("""1) 일반회원""", 42, Color(0xff979797)),
                       ),
                       Container(
                         margin: EdgeInsets.only(left: 150.w),
@@ -642,8 +632,7 @@ class Announce extends StatelessWidget {
                       ),
                       Container(
                         margin: EdgeInsets.only(left: 90.w),
-                        child:
-                            normalfont("""3) 비회원""", 42, Color(0xff979797)),
+                        child: normalfont("""3) 비회원""", 42, Color(0xff979797)),
                       ),
                       Container(
                         margin: EdgeInsets.only(left: 150.w),
@@ -685,10 +674,8 @@ class Announce extends StatelessWidget {
 전자적 파일형태로 저장된 개인정보는 기록을 재생할 수 없는 기술적 방법을 사용하여 삭제합니다.
 종이에 출력된 개인정보는 분쇄기로 분쇄하거나 소각을 통하여 파기합니다.""", 42, Color(0xff979797)),
                       ),
-                      boldfont(
-                          "\n제 5 조 (개인정보 자동수집 장치의 설치,운영 및 그 거부에 관한 사항)\n",
-                          42,
-                          Colors.black),
+                      boldfont("\n제 5 조 (개인정보 자동수집 장치의 설치,운영 및 그 거부에 관한 사항)\n",
+                          42, Colors.black),
                       Container(
                         margin: EdgeInsets.only(left: 30.w),
                         child: normalfont(
@@ -706,8 +693,8 @@ class Announce extends StatelessWidget {
                       ),
                       Container(
                         margin: EdgeInsets.only(left: 30.w),
-                        child: normalfont("""2. 회사의 쿠키(cookie) 운용""", 42,
-                            Color(0xff979797)),
+                        child: normalfont(
+                            """2. 회사의 쿠키(cookie) 운용""", 42, Color(0xff979797)),
                       ),
                       Container(
                         margin: EdgeInsets.only(left: 90.w),
@@ -728,10 +715,8 @@ class Announce extends StatelessWidget {
                       ),
                       Container(
                         margin: EdgeInsets.only(left: 30.w),
-                        child: normalfont(
-                            """2. 전항에도 불구하고, 다음의 경우에는 예외로 합니다.""",
-                            42,
-                            Color(0xff979797)),
+                        child: normalfont("""2. 전항에도 불구하고, 다음의 경우에는 예외로 합니다.""",
+                            42, Color(0xff979797)),
                       ),
                       Container(
                         margin: EdgeInsets.only(left: 90.w),
@@ -789,8 +774,8 @@ class Announce extends StatelessWidget {
                       ),
                       Container(
                         margin: EdgeInsets.only(left: 30.w),
-                        child: normalfont(
-                            """2. 관리적 대책""", 42, Color(0xff979797)),
+                        child:
+                            normalfont("""2. 관리적 대책""", 42, Color(0xff979797)),
                       ),
                       Container(
                         margin: EdgeInsets.only(left: 90.w),
@@ -905,8 +890,8 @@ class Announce extends StatelessWidget {
 - 연락처: 061-331-3116
 - 이메일: hohoco0701@gmail.com""", 42, Color(0xff979797)),
                       ),
-                      boldfont("\n제 13 조(개인정보 처리방침의 개정과 그 공지)\n", 42,
-                          Colors.black),
+                      boldfont(
+                          "\n제 13 조(개인정보 처리방침의 개정과 그 공지)\n", 42, Colors.black),
                       Container(
                         margin: EdgeInsets.only(left: 30.w),
                         child: normalfont(
@@ -947,8 +932,7 @@ class Announce extends StatelessWidget {
                   child: ListView(
                     children: [
                       Center(
-                          child:
-                              boldfont("위치기반서비스 이용약관\n", 60, Colors.black)),
+                          child: boldfont("위치기반서비스 이용약관\n", 60, Colors.black)),
                       boldfont("제 1 조 (목적)\n", 42, Colors.black),
                       Container(
                         margin: EdgeInsets.only(left: 30.w),
@@ -977,8 +961,7 @@ class Announce extends StatelessWidget {
                             42,
                             Color(0xff979797)),
                       ),
-                      boldfont(
-                          "\n제 4 조 (이용신청 및 이용계약의 성립)\n", 42, Colors.black),
+                      boldfont("\n제 4 조 (이용신청 및 이용계약의 성립)\n", 42, Colors.black),
                       Container(
                         margin: EdgeInsets.only(left: 30.w),
                         child: normalfont(
@@ -1026,8 +1009,7 @@ class Announce extends StatelessWidget {
                             42,
                             Color(0xff979797)),
                       ),
-                      boldfont(
-                          "\n제 8 조 (서비스이용의 제한 및 중지)\n", 42, Colors.black),
+                      boldfont("\n제 8 조 (서비스이용의 제한 및 중지)\n", 42, Colors.black),
                       Container(
                         margin: EdgeInsets.only(left: 30.w),
                         child: normalfont(
@@ -1104,11 +1086,9 @@ class Announce extends StatelessWidget {
                       ),
                       Container(
                         margin: EdgeInsets.only(left: 90.w),
-                        child: normalfont(
-                            """1) 개인위치정보주체에 대한 위치정보 이용, 제공 사실 확인자료
+                        child: normalfont("""1) 개인위치정보주체에 대한 위치정보 이용, 제공 사실 확인자료
 2) 개인위치정보주체의 개인위치정보가 위치정보의 보호 및 이용 등에 관한 법률 또는 다른 법률의 규정에 의해 제3자에게 제공된 이유 및 내용""",
-                            42,
-                            Color(0xff979797)),
+                            42, Color(0xff979797)),
                       ),
                       Container(
                         margin: EdgeInsets.only(left: 30.w),
@@ -1167,8 +1147,7 @@ class Announce extends StatelessWidget {
                             42,
                             Color(0xff979797)),
                       ),
-                      boldfont(
-                          "\n제 16 조 (위치정보관리책임자의 지정)\n", 42, Colors.black),
+                      boldfont("\n제 16 조 (위치정보관리책임자의 지정)\n", 42, Colors.black),
                       Container(
                         margin: EdgeInsets.only(left: 30.w),
                         child: normalfont(
@@ -1248,7 +1227,7 @@ class Announce extends StatelessWidget {
                 Container(
                   margin: EdgeInsets.fromLTRB(160.w, 30.h, 154.w, 30.h),
                   height: 50.w,
-                 // width: 804.h,
+                  // width: 804.h,
                   child: FlatButton(
                       onPressed: () {
                         Get.back(result: "check");

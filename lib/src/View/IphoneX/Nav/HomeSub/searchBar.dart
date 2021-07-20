@@ -1,21 +1,16 @@
-import 'dart:convert';
 import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:uahage/src/Controller/connection.controller.dart';
 import 'package:uahage/src/Controller/location.controller.dart';
-import 'package:uahage/src/Controller/place.restaurant.bookmark.controller.dart';
 import 'package:uahage/src/Controller/user.controller.dart';
 import 'package:uahage/src/Service/connection.dart';
 import 'package:uahage/src/Service/places.restaurant.bookmarks.dart';
 import 'package:uahage/src/Static/Widget/appbar.dart';
-import 'package:uahage/src/Static/Widget/popup.dart';
 import 'package:uahage/src/Static/Widget/progress.dart';
-
 import 'package:uahage/src/Static/url.dart';
-import 'package:uahage/src/View/Nav/HomeSub/searchNoneResult.dart';
+import '../HomeSub/searchNoneResult.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 class SearchBar extends StatefulWidget {
@@ -37,7 +32,7 @@ class _SearchBarState extends State<SearchBar> {
 
     ScreenUtil.init(context, width: 1125, height: 2436);
     return Scaffold(
-      appBar: appBar(context,"항목",""),
+      appBar: appBar(context, "목적지", ""),
       body: IndexedStack(
         index: page,
         children: [
@@ -67,22 +62,22 @@ class _SearchBarState extends State<SearchBar> {
                           var _url = "/maps/show-list";
 
                           Map<String, String> queryParams = {
-                            'userId':'${UserController.to.userId}',
+                            'userId': '${UserController.to.userId}',
                             'lat': '${LocationController.to.lat.value}',
                             'long': "${LocationController.to.lon.value}",
                             'keyword': "'$keyword'", //searchkey.toString()
-                            'token':'${UserController.to.token.value}'
+                            'token': '${UserController.to.token.value}'
                           };
                           var headers = {
                             HttpHeaders.contentTypeHeader: 'application/json',
                           };
                           String queryString =
                               Uri(queryParameters: queryParams).query;
-                          var requestUrl =url+ _url + '?' + queryString;
+                          var requestUrl = url + _url + '?' + queryString;
                           print(requestUrl);
                           await controller.loadUrl(requestUrl);
                           print(controller.currentUrl());
-                            },
+                        },
                         javascriptMode: JavascriptMode.unrestricted,
                         javascriptChannels: Set.from([
                           JavascriptChannel(

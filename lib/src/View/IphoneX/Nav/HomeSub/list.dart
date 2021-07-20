@@ -2,19 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:uahage/src/Controller/connection.controller.dart';
-
 import 'package:uahage/src/Controller/place.controller.dart';
 import 'package:uahage/src/Controller/user.controller.dart';
 import 'package:uahage/src/Service/connection.dart';
 import 'package:uahage/src/Service/places.restaurant.bookmarks.dart';
-
 import 'package:uahage/src/Service/places.dart';
 import 'package:uahage/src/Static/Font/font.dart';
 import 'package:uahage/src/Static/Image/listImage.dart';
 import 'package:uahage/src/Static/Widget/icon.dart';
 import 'package:uahage/src/Static/Widget/progress.dart';
-import 'package:uahage/src/View/Nav/HomeSub/listMap.dart';
-import '../../../Static/url.dart';
+import 'package:uahage/src/Static/url.dart';
+import '../HomeSub/listMap.dart';
 import 'package:uahage/src/Static/Widget/appbar.dart';
 
 class PlaceList extends GetView<PlaceController> {
@@ -73,15 +71,15 @@ class PlaceList extends GetView<PlaceController> {
               ConnectionController.to.connectionstauts !=
                       "ConnectivityResult.none"
                   ? Stack(
-                    //  index: controller.indexCount.value,
+                      //  index: controller.indexCount.value,
                       children: <Widget>[
-                        controller.indexCount.value==0?
-                          ListViews():
-                          ListMap(placeCode: placeCode),
+                          controller.indexCount.value == 0
+                              ? ListViews()
+                              : ListMap(placeCode: placeCode),
                         ])
                   : progress(),
               Container(
-                margin: EdgeInsets.only(left: 950.w*0.84, top: 2250.w*0.84),
+                margin: EdgeInsets.only(left: 950.w * 0.84, top: 1900.w * 0.84),
                 child: controller.indexCount.value == 1
                     ? GestureDetector(
                         onTap: () {
@@ -91,8 +89,8 @@ class PlaceList extends GetView<PlaceController> {
                         },
                         child: Image.asset(
                           './assets/on.png',
-                          width: 284.w*0.84,
-                          height: 133.h*0.9,
+                          width: 284.w * 0.84,
+                          height: 133.h * 0.9,
                         ),
                       )
                     : GestureDetector(
@@ -101,8 +99,8 @@ class PlaceList extends GetView<PlaceController> {
                         },
                         child: Image.asset(
                           './assets/off.png',
-                          width: 284.w*0.84,
-                          height: 133.h*0.9,
+                          width: 284.w * 0.84,
+                          height: 133.h * 0.9,
                         ),
                       ),
               ),
@@ -124,10 +122,10 @@ class PlaceList extends GetView<PlaceController> {
               return Card(
                 elevation: 0.3,
                 child: Container(
-                    height: 450.h*0.9,
+                    height: 450.h * 0.9,
                     padding: EdgeInsets.only(
-                      top: 25.h*0.9,
-                      left: 26.w*0.84,
+                      top: 25.h * 0.9,
+                      left: 26.w * 0.84,
                     ),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -146,7 +144,7 @@ class PlaceList extends GetView<PlaceController> {
                             controller.setPlacetotal(index, "${result[1]}");
                           },
                           child: Container(
-                            width: 1150.w*0.84,
+                            width: 1150.w * 0.84,
                             child: Row(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
@@ -198,12 +196,12 @@ class PlaceList extends GetView<PlaceController> {
                                       ),
                                       borderRadius: BorderRadius.all(
                                           Radius.circular(10.0))),
-                                  height: 413.w*0.84,
-                                  width: 413.w*0.84,
+                                  height: 413.w * 0.84,
+                                  width: 413.w * 0.84,
                                 ),
                                 Padding(
                                     padding: EdgeInsets.only(
-                                  left: 53.w*0.84,
+                                  left: 53.w * 0.84,
                                 )),
                                 Column(
                                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -215,24 +213,19 @@ class PlaceList extends GetView<PlaceController> {
                                       children: [
                                         Container(
                                           //margin: EdgeInsets.only(top: 20.h*0.9),
-                                         // width: 600.w*0.84,
-                                          height: 82.h*0.9,
-                                          child:
-                                            controller.place[index]
-                                                .name.length >
-                                                10
-                                                ? normalfont(
-                                                '${controller.place[index].name.substring(0, 10)}...',
-                                                50,
-                                                Colors.black)
-                                                : normalfont(
-                                                controller
-                                                    .place[index].name,
-                                                50,
-                                               Colors.black),
-
-
-
+                                          // width: 600.w*0.84,
+                                          height: 82.h * 0.9,
+                                          child: controller.place[index].name
+                                                      .length >
+                                                  10
+                                              ? normalfont(
+                                                  '${controller.place[index].name.substring(0, 10)}...',
+                                                  50,
+                                                  Colors.black)
+                                              : normalfont(
+                                                  controller.place[index].name,
+                                                  50,
+                                                  Colors.black),
                                         ),
                                       ],
                                     ),
@@ -241,11 +234,11 @@ class PlaceList extends GetView<PlaceController> {
                                             children: [
                                               Image.asset(
                                                 "./assets/listPage/star_color.png",
-                                                width: 30 * width.w*0.84,
+                                                width: 30 * width.w * 0.84,
                                               ),
                                               Padding(
                                                 padding: EdgeInsets.only(
-                                                    left: 4.7 * width.w*0.84),
+                                                    left: 4.7 * width.w * 0.84),
                                               ),
                                               normalfont(
                                                   "${controller.place[index].total ?? 0.0} ",
@@ -256,7 +249,8 @@ class PlaceList extends GetView<PlaceController> {
                                         : Container(),
                                     placeCode == 1
                                         ? Container(
-                                            margin: EdgeInsets.only(top: 10.h*0.9),
+                                            margin: EdgeInsets.only(
+                                                top: 10.h * 0.9),
                                             child: controller.place[index]
                                                         .address.length >
                                                     14
@@ -271,8 +265,9 @@ class PlaceList extends GetView<PlaceController> {
                                                     Color(0xffb0b0b0)),
                                           )
                                         : Container(
-                                            width: 630.w*0.84,
-                                            margin: EdgeInsets.only(top: 10.h*0.9),
+                                            width: 630.w * 0.84,
+                                            margin: EdgeInsets.only(
+                                                top: 10.h * 0.9),
                                             child: controller.place[index]
                                                         .address.length >
                                                     32
@@ -302,9 +297,10 @@ class PlaceList extends GetView<PlaceController> {
                                     // ),
                                     placeCode == 1
                                         ? Container(
-                                            margin: EdgeInsets.only(top: 5.h*0.9),
-                                            height: 120.h*0.9,
-                                           width: 650.w*0.84,
+                                            margin:
+                                                EdgeInsets.only(top: 5.h * 0.9),
+                                            height: 120.h * 0.9,
+                                            width: 650.w * 0.84,
                                             alignment: Alignment.bottomRight,
                                             child: Row(
                                               children: [
@@ -345,18 +341,19 @@ class PlaceList extends GetView<PlaceController> {
                         placeCode == 1
                             ? Obx(
                                 () => Container(
-                                  margin: EdgeInsets.only(left: 8.w*0.84, top: 25.h*0.9),
+                                  margin: EdgeInsets.only(
+                                      left: 8.w * 0.84, top: 25.h * 0.9),
                                   child: InkWell(
                                     child: Container(
                                       padding: EdgeInsets.only(
-                                          left: 30.w*0.84,
-                                          right: 30.w*0.84,
-                                          bottom: 10.h*0.9),
+                                          left: 30.w * 0.84,
+                                          right: 30.w * 0.84,
+                                          bottom: 10.h * 0.9),
                                       child: Image.asset(
                                         controller.place[index].bookmark == 0
                                             ? "./assets/listPage/love_grey.png"
                                             : "./assets/listPage/love_color.png",
-                                        height: 46.h*0.9,
+                                        height: 46.h * 0.9,
                                       ),
                                     ),
                                     onTap: () async {

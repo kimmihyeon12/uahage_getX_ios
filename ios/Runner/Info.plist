@@ -2,87 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-<!-- camara -->
-<key>NSPhotoLibraryUsageDescription</key>
-<string>App needs access to photo lib for profile images</string>
-<key>NSCameraUsageDescription</key>
-<string>To capture profile photo please grant camera access</string>
-
-<!-- Location -->
-  <key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
-  <string>Your current location will be used to find restaurants advertising on this app.</string>
-  <key>NSLocationAlwaysUsageDescription</key>
-  <string>Your current location will be used to find restaurants advertising on this app.</string>
-  <key>NSLocationWhenInUseUsageDescription</key>
-  <string>Your current location will be used to find restaurants advertising on this app.</string>
-<!-- Naver -->
-	<key>CFBundleURLTypes</key>
-        <array>
-            <dict>
-                <key>CFBundleTypeRole</key>
-                <string>Editor</string>
-                <key>CFBundleURLSchemes</key>
-                <array>
-                    <string>[UrlScheme]</string>
-                </array>
-            </dict>
-        </array>
-
-        <key>LSApplicationQueriesSchemes</key>
-        <array>
-            <string>naversearchapp</string>
-            <string>naversearchthirdlogin</string>
-        </array>
-        <key>kServiceAppUrlScheme</key>
-        <string>[UrlScheme]</string>
-        <key>kConsumerKey</key>
-        <string>[ConsumerKey]</string>
-        <key>kConsumerSecret</key>
-        <string>[ConsumerSecret]</string>
-        <key>kServiceAppName</key>
-        <string>[ServiceAppName]</string>
-
-        <!-- http allows configurations -->
-        <key>NSAppTransportSecurity</key>
-        <dict>
-           <key>NSAllowsArbitraryLoads</key>
-           <true/>
-           <key>NSExceptionDomains</key>
-           <dict>
-              <key>naver.com</key>
-              <dict>
-                 <key>NSExceptionAllowsInsecureHTTPLoads</key>
-                 <true/>
-                 <key>NSExceptionRequiresForwardSecrecy</key>
-                 <false/>
-                 <key>NSIncludesSubdomains</key>
-                 <true/>
-              </dict>
-              <key>naver.net</key>
-              <dict>
-                 <key>NSExceptionAllowsInsecureHTTPLoads</key>
-                 <true/>
-                 <key>NSExceptionRequiresForwardSecrecy</key>
-                 <false/>
-                 <key>NSIncludesSubdomains</key>
-                 <true/>
-              </dict>
-           </dict>
-        </dict>
-	<!-- Naver finish -->
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<!-- common -->
-		<string>kakao581f27a7aed8a99e5b0a78b33c855dab</string>
-
-		<!-- KakaoTalk login -->
-		<string>kakaokompassauth</string>
-		<string>storykompassauth</string>
-
-		<!-- KakaoLink -->
-		<string>kakaolink</string>         
-		<string>kakaotalk-5.9.7</string>
-	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>
@@ -99,10 +18,79 @@
 	<string>$(FLUTTER_BUILD_NAME)</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.hohocompany.uahage</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>kakao581f27a7aed8a99e5b0a78b33c855dab</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>com.hohocompany.uahage</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>com.hohocompany.uahage</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleVersion</key>
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>kakao581f27a7aed8a99e5b0a78b33c855dab</string>
+		<string>kakaokompassauth</string>
+		<string>storykompassauth</string>
+		<string>kakaolink</string>
+		<string>kakaotalk-5.9.7</string>
+		<string>naversearchapp</string>
+		<string>naversearchthirdlogin</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>naver.com</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+			<key>naver.net</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+				<key>NSExceptionRequiresForwardSecrecy</key>
+				<false/>
+				<key>NSIncludesSubdomains</key>
+				<true/>
+			</dict>
+		</dict>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>To capture profile photo please grant camera access</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Your current location will be used to find restaurants advertising on this app.</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Your current location will be used to find restaurants advertising on this app.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Your current location will be used to find restaurants advertising on this app.</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>App needs access to photo lib for profile images</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -122,5 +110,13 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>kConsumerKey</key>
+	<string>EvfLTrODldBL5vq1DPGH</string>
+	<key>kConsumerSecret</key>
+	<string>CDAKsRSzyF</string>
+	<key>kServiceAppName</key>
+	<string>uahage</string>
+	<key>kServiceAppUrlScheme</key>
+	<string>com.hohocompany.uahage</string>
 </dict>
 </plist>

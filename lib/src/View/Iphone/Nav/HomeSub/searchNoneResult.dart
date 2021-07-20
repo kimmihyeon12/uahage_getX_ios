@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:uahage/src/Static/Widget/appbar.dart';
-import 'package:uahage/src/View/Nav/HomeSub/reviseSuggest.dart';
+import '../HomeSub/reviseSuggest.dart';
 
 class SearchNoneResult extends StatefulWidget {
   @override

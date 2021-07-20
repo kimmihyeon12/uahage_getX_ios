@@ -1,13 +1,9 @@
-import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:uahage/src/Service/review.dart';
 import 'package:uahage/src/Static/Widget/appbar.dart';
 import 'package:uahage/src/Static/Widget/imageBig.dart';
-import 'package:uahage/src/Static/url.dart';
-import 'package:http/http.dart' as http;
 
 class ReviewImage extends StatefulWidget {
   final data;

@@ -3,8 +3,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'dart:io';
-import 'package:image_picker/image_picker.dart';
-import 'package:uahage/src/Controller/user.controller.dart';
 import 'package:uahage/src/Service/users.dart';
 import 'package:uahage/src/Static/Font/font.dart';
 import 'package:uahage/src/Static/Image/mypageImage.dart';
@@ -87,7 +85,7 @@ class _UserModifyState extends State<UserModify> {
 
   @override
   Widget build(BuildContext context) {
-    ScreenUtil.init(context, width: 1125, height: 2436);
+    ScreenUtil.init(context, width: 781, height: 1390);
     FocusScopeNode currentFocus = FocusScope.of(context);
 
     return WillPopScope(
@@ -102,7 +100,7 @@ class _UserModifyState extends State<UserModify> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Container(
-                    margin: EdgeInsets.fromLTRB(60.w, 50.h, 0, 0),
+                    margin: EdgeInsets.fromLTRB(60.w * 0.7, 50.h * 0.62, 0, 0),
                     child: InkWell(
                       onTap: () async {
                         Navigator.pop(context, false);
@@ -112,14 +110,14 @@ class _UserModifyState extends State<UserModify> {
                         children: [
                           Image.asset(
                             "./assets/myPage/back.png",
-                            width: 30.w,
-                            height: 76.h,
+                            width: 30.w * 0.7,
+                            height: 76.h * 0.62,
                           ),
                           // 내 정보
                           Container(
-                            margin: EdgeInsets.only(left: 33.w),
+                            margin: EdgeInsets.only(left: 33.w * 0.7),
                             child: normalfont(
-                                "내 정보", 46, Color.fromRGBO(255, 114, 148, 1.0)),
+                                "내 정보", 32, Color.fromRGBO(255, 114, 148, 1.0)),
                           ),
 
                           //
@@ -127,13 +125,13 @@ class _UserModifyState extends State<UserModify> {
                       ),
                     )),
                 Container(
-                  padding: EdgeInsets.only(top:140.h),
+                  padding: EdgeInsets.only(top: 100.h * 0.62),
                   child: Center(
                     child: Stack(
                       children: [
                         SizedBox(
-                          height: 330.h,
-                          width: 330.h,
+                          height: 330.h * 0.62,
+                          width: 330.h * 0.62,
                           child: CircleAvatar(
                             backgroundImage:
                                 AssetImage("./assets/myPage/avatar.png"),
@@ -173,8 +171,8 @@ class _UserModifyState extends State<UserModify> {
                           ),
                         ),
                         Positioned(
-                          right: -2,
-                          bottom: -2,
+                          right: -7,
+                          bottom: -7,
                           child: Container(
                             child: InkWell(
                               onTap: () {
@@ -182,8 +180,8 @@ class _UserModifyState extends State<UserModify> {
                               },
                               child: Image.asset(
                                 "./assets/myPage/camera.png",
-                                height: 110.h,
-                                width: 110.w,
+                                height: 130.h * 0.62,
+                                width: 130.w * 0.7,
                               ),
                             ),
                           ),
@@ -195,7 +193,7 @@ class _UserModifyState extends State<UserModify> {
 
                 Container(
                   margin: EdgeInsets.only(
-                    top: 105.h,
+                    top: 105.h * 0.62,
                   ),
                   child: Container(
                     child: Row(
@@ -203,15 +201,16 @@ class _UserModifyState extends State<UserModify> {
                       children: [
                         // 닉네임
                         Container(
-                          margin: EdgeInsets.fromLTRB(118.w, 40.h, 57.w, 0),
+                          margin: EdgeInsets.fromLTRB(
+                              118.w * 0.7, 40.h * 0.62, 57.w * 0.7, 0),
                           child: normalfont(
-                              "닉네임", 46, Color.fromRGBO(255, 114, 148, 1.0)),
+                              "닉네임", 32, Color.fromRGBO(255, 114, 148, 1.0)),
                         ),
                         Expanded(
                           flex: 1,
                           child: Container(
                             margin: EdgeInsets.only(
-                              right: 106.w,
+                              right: 106.w * 0.7,
                             ),
                             child: Stack(
                               children: [
@@ -228,11 +227,11 @@ class _UserModifyState extends State<UserModify> {
                                   style: TextStyle(
                                       color: Color(0xff3a3939),
                                       fontFamily: "NotoSansCJKkr_Bold",
-                                      fontSize: 46.sp),
+                                      fontSize: 32.sp),
                                   decoration: InputDecoration(
                                     counterText: '',
                                     contentPadding:
-                                        EdgeInsets.only(right: 410.w),
+                                        EdgeInsets.only(right: 410.w * 0.7),
                                     enabledBorder: UnderlineInputBorder(
                                       borderSide: BorderSide(
                                         color: const Color(0xffff7292),
@@ -248,13 +247,13 @@ class _UserModifyState extends State<UserModify> {
                                     hintStyle: TextStyle(
                                         color: const Color(0xffcacaca),
                                         fontFamily: "NotoSansCJKkr_Medium",
-                                        fontSize: 46.sp),
+                                        fontSize: 32.sp),
                                   ),
                                 ),
                                 Align(
                                   alignment: Alignment.topRight,
                                   child: FlatButton(
-                                    height: 106.h,
+                                    height: 106.h * 0.62,
                                     shape: RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(8.0)),
@@ -277,7 +276,7 @@ class _UserModifyState extends State<UserModify> {
                                           }
                                         : () {},
                                     child: // 중복확인
-                                        normalfont("중복확인", 46, Colors.white),
+                                        normalfont("중복확인", 32, Colors.white),
                                   ),
                                 ),
                               ],
@@ -290,17 +289,17 @@ class _UserModifyState extends State<UserModify> {
                 ),
                 //Gender
                 Container(
-                  margin: EdgeInsets.fromLTRB(77.w, 60.h, 0, 0),
+                  margin: EdgeInsets.fromLTRB(77.w * 0.7, 60.h * 0.62, 0, 0),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       // 아이성별
                       normalfont(
-                          "아이성별", 46, Color.fromARGB(255, 255, 114, 148)),
+                          "아이성별", 32, Color.fromARGB(255, 255, 114, 148)),
                       Container(
-                        height: 282.h,
-                        width: 195.w,
-                        margin: EdgeInsets.only(left: 41.w),
+                        height: 282.h * 0.62,
+                        width: 195.w * 0.7,
+                        margin: EdgeInsets.only(left: 41.w * 0.7),
                         child: InkWell(
                           child: Image.asset(userdata['baby_gender'] != "F" &&
                                   userdata['baby_gender'] != "A"
@@ -322,9 +321,9 @@ class _UserModifyState extends State<UserModify> {
                         ),
                       ),
                       Container(
-                        height: 283.h,
-                        width: 195.w,
-                        margin: EdgeInsets.only(left: 74.w),
+                        height: 283.h * 0.62,
+                        width: 195.w * 0.7,
+                        margin: EdgeInsets.only(left: 74.w * 0.7),
                         child: InkWell(
                           child: Image.asset(userdata['baby_gender'] != "M" &&
                                   userdata['baby_gender'] != "A"
@@ -350,16 +349,17 @@ class _UserModifyState extends State<UserModify> {
                 ),
 
                 Container(
-                  margin: EdgeInsets.fromLTRB(77.w, 50.h, 0, 0),
+                  margin: EdgeInsets.fromLTRB(77.w * 0.7, 50.h * 0.62, 0, 0),
                   child: Row(
                     children: [
                       // 아이생일
-                      normalfont("아이생일", 46,  Color(0xffff7292)),
+                      normalfont("아이생일", 32, Color(0xffff7292)),
 
                       Expanded(
                         flex: 1,
                         child: Container(
-                          margin: EdgeInsets.fromLTRB(58.w, 0, 121.w, 0),
+                          margin: EdgeInsets.fromLTRB(
+                              58.w * 0.7, 0, 121.w * 0.7, 0),
                           child: Stack(
                             children: [
                               GestureDetector(
@@ -376,7 +376,7 @@ class _UserModifyState extends State<UserModify> {
                                     textAlign: TextAlign.left,
                                     style: TextStyle(
                                         color: Color(0xffff7292),
-                                        fontSize: 46.sp,
+                                        fontSize: 32.sp,
                                         fontFamily: 'NotoSansCJKkr_Medium',
                                         fontStyle: FontStyle.normal,
                                         letterSpacing: -1.0),
@@ -399,7 +399,7 @@ class _UserModifyState extends State<UserModify> {
                                               ? Color(0xffd4d4d4)
                                               : Color(0xffff7292),
                                           fontFamily: "NotoSansCJKkr_Medium",
-                                          fontSize: 46.0.sp),
+                                          fontSize: 32.0.sp),
                                     ),
                                   ),
                                 ),
@@ -426,50 +426,50 @@ class _UserModifyState extends State<UserModify> {
                 ),
 
                 Padding(
-                  padding: EdgeInsets.fromLTRB(0, 98.h, 0, 0.h),
+                  padding: EdgeInsets.fromLTRB(0, 98.h * 0.62, 0, 0.h * 0.62),
                 ),
                 //Ages
                 Column(children: [
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Padding(padding: EdgeInsets.only(left: 120.w)),
+                      Padding(padding: EdgeInsets.only(left: 120.w * 0.7)),
                       normalfont(
-                          "보호자\n연령대", 46, Color.fromARGB(255, 255, 114, 148)),
-                      Padding(padding: EdgeInsets.only(left: 44.w)),
+                          "보호자\n연령대", 32, Color.fromARGB(255, 255, 114, 148)),
+                      Padding(padding: EdgeInsets.only(left: 44.w * 0.7)),
                       InkWell(
                         child: Image.asset(
                           userdata["age_group_type"] == 1
                               ? './assets/register/10_pink.png'
                               : './assets/register/10_grey.png',
-                          height: 145.h,
-                          width: 185.w,
+                          height: 145.h * 0.62,
+                          width: 185.w * 0.7,
                         ),
                         onTap: () {
                           setAgeColor(1);
                         },
                       ),
-                      Padding(padding: EdgeInsets.only(left: 44.w)),
+                      Padding(padding: EdgeInsets.only(left: 44.w * 0.7)),
                       InkWell(
                         child: Image.asset(
                           userdata["age_group_type"] == 2
                               ? './assets/register/20_pink.png'
                               : './assets/register/20_grey.png',
-                          height: 145.h,
-                          width: 185.w,
+                          height: 145.h * 0.62,
+                          width: 185.w * 0.7,
                         ),
                         onTap: () {
                           setAgeColor(2);
                         },
                       ),
-                      Padding(padding: EdgeInsets.only(left: 44.w)),
+                      Padding(padding: EdgeInsets.only(left: 44.w * 0.7)),
                       InkWell(
                         child: Image.asset(
                           userdata["age_group_type"] == 3
                               ? './assets/register/30_pink.png'
                               : './assets/register/30_grey.png',
-                          height: 145.h,
-                          width: 185.w,
+                          height: 145.h * 0.62,
+                          width: 185.w * 0.7,
                         ),
                         onTap: () {
                           setAgeColor(3);
@@ -477,46 +477,46 @@ class _UserModifyState extends State<UserModify> {
                       ),
                     ],
                   ),
-                  Padding(padding: EdgeInsets.only(top: 35.w)),
+                  Padding(padding: EdgeInsets.only(top: 35.w * 0.7)),
                   Row(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Padding(padding: EdgeInsets.only(left: 120.w)),
-                      normalfont("보호자\n연령대", 46, Colors.transparent),
-                      Padding(padding: EdgeInsets.only(left: 44.w)),
+                      Padding(padding: EdgeInsets.only(left: 120.w * 0.7)),
+                      normalfont("보호자\n연령대", 32, Colors.transparent),
+                      Padding(padding: EdgeInsets.only(left: 44.w * 0.7)),
                       InkWell(
                         child: Image.asset(
                           userdata["age_group_type"] == 4
                               ? './assets/register/40_pink.png'
                               : './assets/register/40_grey.png',
-                          height: 145.h,
-                          width: 185.w,
+                          height: 145.h * 0.62,
+                          width: 185.w * 0.7,
                         ),
                         onTap: () {
                           setAgeColor(4);
                         },
                       ),
-                      Padding(padding: EdgeInsets.only(left: 44.w)),
+                      Padding(padding: EdgeInsets.only(left: 44.w * 0.7)),
                       InkWell(
                         child: Image.asset(
                           userdata["age_group_type"] == 5
                               ? './assets/register/50_pink.png'
                               : './assets/register/50_grey.png',
-                          height: 145.h,
-                          width: 185.w,
+                          height: 145.h * 0.62,
+                          width: 185.w * 0.7,
                         ),
                         onTap: () {
                           setAgeColor(5);
                         },
                       ),
-                      Padding(padding: EdgeInsets.only(left: 44.w)),
+                      Padding(padding: EdgeInsets.only(left: 44.w * 0.7)),
                       InkWell(
                         child: Image.asset(
                           userdata["age_group_type"] == 6
                               ? './assets/register/others_pink.png'
                               : './assets/register/others_grey.png',
-                          height: 145.h,
-                          width: 185.w,
+                          height: 145.h * 0.62,
+                          width: 185.w * 0.7,
                         ),
                         onTap: () {
                           setAgeColor(6);
@@ -525,17 +525,17 @@ class _UserModifyState extends State<UserModify> {
                     ],
                   ),
                 ]),
-             //   Padding(padding: EdgeInsets.only(top: 125.h)),
+                //   Padding(padding: EdgeInsets.only(top: 125.h*0.62)),
 
                 //OK
                 Center(
                   child: Container(
                     margin: EdgeInsets.only(
-                      top: 80.h,
+                      top: 80.h * 0.62,
                     ),
                     child: SizedBox(
-                      height: 145.w,
-                      width: 893.h,
+                      height: 145.w * 0.7,
+                      width: 893.h * 0.62,
                       child: FlatButton(
                         shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(8.0)),
@@ -576,7 +576,7 @@ class _UserModifyState extends State<UserModify> {
                                                 Navigator.pop(context);
                                               },
                                               child: // 확인
-                                                  normalfont("확", 46,
+                                                  normalfont("확", 32,
                                                       Color(0xffff7292)),
                                             ),
                                           ],
@@ -584,10 +584,10 @@ class _UserModifyState extends State<UserModify> {
                                       }
                                       return Center(
                                         child: SizedBox(
-                                            height: 200.w,
-                                            width: 200.w,
+                                            height: 200.w * 0.7,
+                                            width: 200.w * 0.7,
                                             child: buildSpinKitThreeBounce(
-                                                80.w, 1500.h)),
+                                                80.w * 0.7, 1500.h * 0.62)),
                                       );
                                     },
                                   ),
@@ -600,7 +600,7 @@ class _UserModifyState extends State<UserModify> {
                                 }
                               },
                         child: // 중복확인
-                            normalfont("OK", 46, Color(0xffffffff)),
+                            normalfont("OK", 32, Color(0xffffffff)),
                       ),
                     ),
                   ),

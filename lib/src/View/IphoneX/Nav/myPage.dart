@@ -8,7 +8,7 @@ import 'package:uahage/src/Service/users.dart';
 import 'package:uahage/src/Static/Image/mypageImage.dart';
 import 'package:uahage/src/Static/Widget/progress.dart';
 import 'package:uahage/src/Static/Font/font.dart';
-import 'package:uahage/src/View/Nav/userMotify.dart';
+import '../Nav/userMotify.dart';
 
 class MyPage extends StatefulWidget {
   @override

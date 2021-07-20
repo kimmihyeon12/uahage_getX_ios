@@ -39,7 +39,7 @@ class Login extends GetView<UserController> {
               ),
               Padding(padding: EdgeInsets.only(top: 54.h)),
               Container(
-                margin: EdgeInsets.only(left: 489.w),
+                margin: EdgeInsets.only(left: 350.w),
                 child: Row(
                   children: [
                     InkWell(
@@ -82,6 +82,22 @@ class Login extends GetView<UserController> {
                             "assets/LoginPage/naver.png",
                             width: 62.w,
                           ),
+                        ),
+                      ),
+                    ),
+                    Padding(padding: EdgeInsets.only(left: 104.w)),
+                    InkWell(
+                      onTap: () {
+                        controller.setOption("NAVER");
+                        Get.toNamed("/agreement");
+                      },
+                      child: Container(
+                        // margin: EdgeInsets.all(18),
+                        child: Image.asset(
+                          "assets/LoginPage/apple.png",
+                          //  fit: BoxFit.fill,
+                          height: 208.h,
+                          width: 208.w,
                         ),
                       ),
                     ),
